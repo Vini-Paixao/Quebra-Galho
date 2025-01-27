@@ -1,6 +1,5 @@
 from tkinter import font
 import sqlparse
-from termcolor import colored
 import tkinter as tk
 from tkinter import scrolledtext, messagebox
 
@@ -16,7 +15,7 @@ def formatar_sql():
 
     consultas = "\n".join(linhas)
     if not consultas.strip():
-        print(colored("Nenhuma consulta SQL foi fornecida.", "red"))
+        print("Nenhuma consulta SQL foi fornecida.")
         return
 
     # Divide as consultas em instruções individuais
@@ -27,7 +26,7 @@ def formatar_sql():
         consulta_formatada = sqlparse.format(instrucao, reindent=True, keyword_case='upper')
         consultas_formatadas.append(consulta_formatada)
 
-    print(colored("\nConsultas SQL formatadas:", "green"))
+    print("\nConsultas SQL formatadas:")
     for consulta in consultas_formatadas:
         print(consulta)
         print('-' * 50)  # Separador entre consultas formatadas
