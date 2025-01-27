@@ -1,6 +1,48 @@
 import re
 from datetime import datetime
+import tkinter as tk
+from tkinter import messagebox
+from tkinter import font
 
+
+def converter_data_interface():
+    def processar():
+        data_input = entrada.get()
+        try:
+            data_convertida = converter_data(data_input)
+            resultado_entry.configure(state="normal")  # Habilita edição para inserir o texto
+            resultado_entry.delete(0, tk.END)  # Limpa qualquer texto existente
+            resultado_entry.insert(0, data_convertida)  # Insere a data convertida
+            resultado_entry.configure(state="readonly")  # Volta para somente leitura
+        except ValueError as e:
+            messagebox.showerror("Erro", f"Formato de data inválido: {e}")
+
+    janela = tk.Toplevel()
+    janela.title("Converter Data")
+    janela.geometry("450x220")
+    janela.configure(bg='lightblue')
+    
+    bold = font.Font(family="Verdana", size=16, weight="bold")
+    regular = font.Font(family="Verdana", size=10, weight="normal")
+
+    tk.Label(janela, text="Informe a Data:", font=bold, bg='lightblue').pack(pady=5)
+    tk.Label(janela, text="Valores aceitos - DD/MM/YYYY, DD/MM, DDMMYYYY, DDMM", font=regular, bg='lightblue').pack(pady=5)
+
+    entrada = tk.Entry(janela, width=50, font=regular)
+    entrada.pack(pady=5)
+
+    btn_processar = tk.Button(janela, text="Processar", font=regular, command=processar)
+    btn_processar.pack(pady=5)
+
+    # Campo para exibir o resultado
+    resultado_entry = tk.Entry(janela, width=50, state="readonly", font=regular, readonlybackground="white", fg="black")
+    resultado_entry.pack(pady=5)
+    
+    # Botão para fechar a janela
+    btn_encerrar = tk.Button(janela, text="Fechar", font=regular, command=janela.destroy)
+    btn_encerrar.pack(pady=5)
+
+    janela.mainloop()
 
 def converter_data(data_input):
     """

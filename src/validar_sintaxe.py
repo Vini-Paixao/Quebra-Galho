@@ -1,6 +1,8 @@
 import subprocess
 import tempfile
 import os
+from tkinter import font, messagebox, scrolledtext
+import tkinter as tk
 
 def capturar_entrada_sql():
     """
@@ -27,7 +29,7 @@ def validar_sintaxe_sql(consulta_sql):
     try:
         # Executa o SQLFluff para validar a sintaxe
         resultado = subprocess.run(
-            ['sqlfluff', 'lint', temp_file_path, '--dialect', 'sqlite'],
+            ['sqlfluff', 'lint', temp_file_path, '--dialect', 'tsql'],
             capture_output=True,
             text=True
         )
@@ -40,3 +42,33 @@ def validar_sintaxe_sql(consulta_sql):
     finally:
         # Remove o arquivo temporário
         os.remove(temp_file_path)
+        
+def validador_sintaxe_interface():
+    def validar():
+        consulta = text_area.get("1.0", tk.END).strip()
+        if consulta:
+            resultado = validar_sintaxe_sql(consulta)
+            messagebox.showinfo("Resultado da Validação", resultado)
+        else:
+            messagebox.showwarning("Aviso", "Por favor, insira uma consulta SQL.")
+
+    janela = tk.Toplevel()
+    janela.title("Validador de Sintaxe SQL")
+    janela.geometry("500x300")
+    janela.configure(bg='lightgreen')
+    
+    # Fontes
+    bold = font.Font(family="Verdana", size=12, weight="bold")
+    regular = font.Font(family="Verdana", size=10, weight="normal")
+
+    label = tk.Label(janela, text="Insira sua consulta SQL:", font=bold, bg='lightgreen')
+    label.pack(pady=5)
+
+    text_area = scrolledtext.ScrolledText(janela, width=55, height=10, font=regular)
+    text_area.pack(pady=5)
+
+    btn_validar = tk.Button(janela, text="Validar Sintaxe", font=regular, command=validar)
+    btn_validar.pack(pady=5)
+
+    btn_fechar = tk.Button(janela, text="Fechar", font=regular, command=janela.destroy)
+    btn_fechar.pack(pady=5)
