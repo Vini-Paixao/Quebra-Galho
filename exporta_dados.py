@@ -26,26 +26,23 @@ def exportar_dados_interface():
 
         formato = formato_var.get()
         if formato == "CSV":
-            file_path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv")])
+            file_path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("Arquivos CSV", "*.csv")])
             if file_path:
                 try:
                     df.to_csv(file_path, index=False)
                     messagebox.showinfo("Sucesso", f"Dados exportados com sucesso para {file_path}")
                 except Exception as e:
                     messagebox.showerror("Erro", f"Falha ao exportar para CSV: {e}")
-        elif formato == "JSON":
-            try:
-                json_data = df.to_json(orient="records", lines=True)
-                json_window = tk.Toplevel(janela)
-                json_window.title("Dados JSON")
-                json_text = tk.Text(json_window, wrap="none")
-                json_text.insert("1.0", json_data)
-                json_text.configure(state="disabled")
-                json_text.pack(expand=True, fill="both")
-            except Exception as e:
-                messagebox.showerror("Erro", f"Falha ao converter para JSON: {e}")
+        elif formato == "XML":
+            file_path = filedialog.asksaveasfilename(defaultextension=".xml", filetypes=[("Arquivos XML", "*.xml")])
+            if file_path:
+                try:
+                    df.to_xml(file_path, index=False)
+                    messagebox.showinfo("Sucesso", f"Dados exportados com sucesso para {file_path}")
+                except Exception as e:
+                    messagebox.showerror("Erro", f"Falha ao exportar para XML: {e}")
         elif formato == "XLSX":
-            file_path = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel files", "*.xlsx")])
+            file_path = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Arquivos Excel", "*.xlsx")])
             if file_path:
                 try:
                     df.to_excel(file_path, index=False)
@@ -77,7 +74,7 @@ def exportar_dados_interface():
     formato_label.pack(pady=5)
 
     formato_var = tk.StringVar(value="CSV")
-    formatos = [("CSV", "CSV"), ("JSON", "JSON"), ("Excel (XLSX)", "XLSX")]
+    formatos = [("CSV", "CSV"), ("XML", "XML"), ("Excel (XLSX)", "XLSX")]
     for text, mode in formatos:
         tk.Radiobutton(janela, text=text, variable=formato_var, value=mode, font=regular, bg='lightgreen').pack(anchor="w")
 
@@ -88,4 +85,3 @@ def exportar_dados_interface():
     tk.Button(janela, text="Fechar", font=regular, command=janela.destroy).pack(pady=5)
 
     janela.mainloop()
-

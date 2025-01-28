@@ -12,7 +12,7 @@ Um programa em Python que auxilia em tarefas do dia a dia, facilitando assim tar
   - **Validar Sintaxe** - Recebe um Script SQL e faz a validação se o mesmo é um script que rodaria sem nenhum erro de sintaxe.
   - **Gerador de Scripts** - Gera Scripts SQL básicos (INSERT, UPDATE e DELETE) com base nos dados fornecidos.
   - **Formatação de Consulta** - Recebe um SCRIPT SQL e formata o mesmo na identação correta, facilitando na hora de visualizar os dados e realizar a consulta.
-  - **Exportação de Consulta** - Recebe o resultado de uma consulta SQL e fornece a opção de exportar em **CSV**,**JSON** ou **EXCEL (.xlsx)** assim facilitando a manipulação de dados externamente.
+  - **Exportação de Consulta** - Recebe o resultado de uma consulta SQL e fornece a opção de exportar em **CSV**,**XML** ou **EXCEL (.xlsx)** assim facilitando a manipulação de dados externamente.
 
 ## Instalação
 
