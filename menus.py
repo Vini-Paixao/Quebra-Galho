@@ -1,5 +1,6 @@
 from alinhar_valores import alinhar_valores_interface
 from converter_data import converter_data_interface
+from exporta_dados import exportar_dados_interface
 from limpar_formatacao import limpar_formatacao
 from validar_sintaxe import validador_sintaxe_interface
 from gerador_scripts import menu_gerador_scripts
@@ -82,8 +83,8 @@ def menu_sql():
     btn_formatacao_consultas = tk.Button(janela, text="Formatação de Consultas", font=regular, command=formatar_sql_interface)
     btn_formatacao_consultas.pack(pady=5)
     
-    btn_emdev = tk.Button(janela, text="Em Desenvolvimento", font=regular)
-    btn_emdev.pack(pady=5)
+    btn_exporta = tk.Button(janela, text="Exportar Consultas SQL", font=regular, command=exportar_dados_interface)
+    btn_exporta.pack(pady=5)
 
     btn_voltar = tk.Button(janela, text="Voltar", font=regular, command=janela.destroy)
     btn_voltar.pack(pady=5)
