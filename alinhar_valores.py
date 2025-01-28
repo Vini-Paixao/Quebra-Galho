@@ -14,7 +14,11 @@ def alinhar_valores_interface():
             messagebox.showwarning("Aviso", "Nenhum valor válido foi fornecido.")
             return
 
-        resultado = ",".join(linhas)
+        if remover_duplicatas_var.get():
+            linhas = list(dict.fromkeys(linhas))  # Remove duplicatas mantendo a ordem
+
+        delimitador = delimitador_var.get()
+        resultado = delimitador.join(linhas)
         resultado_entry.configure(state="normal")  # Habilita edição para inserir o texto
         resultado_entry.delete(0, tk.END)  # Limpa qualquer texto existente
         resultado_entry.insert(0, resultado)  # Insere o texto formatado
@@ -22,7 +26,7 @@ def alinhar_valores_interface():
 
     janela = tk.Toplevel()
     janela.title("Alinhar Valores")
-    janela.geometry("550x320")
+    janela.geometry("550x440")
     janela.configure(bg='lightblue')
     
     # Fontes
@@ -32,8 +36,23 @@ def alinhar_valores_interface():
     instrucao_label = tk.Label(janela, text="Informe os valores, um por linha, e clique em 'Alinhar':", font=bold, bg='lightblue')
     instrucao_label.pack(pady=5)
 
-    text_area = tk.Text(janela, width=60, height=10,font=regular)
+    text_area = tk.Text(janela, width=60, height=10, font=regular)
     text_area.pack(pady=5)
+
+    # Opções de delimitador
+    delimitador_label = tk.Label(janela, text="Escolha o delimitador:", font=regular, bg='lightblue')
+    delimitador_label.pack(pady=5)
+
+    delimitador_var = tk.StringVar(value=",")  # Valor padrão é vírgula
+    delimitadores = [",", ";", "|", "/", "\\", "-"]
+    delimitador_menu = tk.OptionMenu(janela, delimitador_var, *delimitadores)
+    delimitador_menu.config(font=regular)
+    delimitador_menu.pack(pady=5)
+
+    # Checkbox para remover duplicatas
+    remover_duplicatas_var = tk.BooleanVar()
+    remover_duplicatas_check = tk.Checkbutton(janela, text="Remover duplicatas", variable=remover_duplicatas_var, font=regular, bg='lightblue')
+    remover_duplicatas_check.pack(pady=5)
 
     alinhar_button = tk.Button(janela, text="Alinhar", font=regular, command=alinhar)
     alinhar_button.pack(pady=5)

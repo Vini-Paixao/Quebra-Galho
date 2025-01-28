@@ -74,11 +74,6 @@ def menu_gerador_scripts():
     janela.configure(bg='lightgreen')
     janela.geometry('800x330')
     
-    # Fontes
-    global bold
-    bold = font.Font(family="Verdana", size=12, weight="bold")
-    
-    global regular
     regular = font.Font(family="Verdana", size=8, weight="normal")
 
     frame_botoes = tk.Frame(janela, bg='lightgreen')
