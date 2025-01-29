@@ -12,14 +12,14 @@ Um programa em Python que auxilia em tarefas do dia a dia, facilitando assim tar
   - **Validar Sintaxe** - Recebe um Script SQL e faz a validação se o mesmo é um script que rodaria sem nenhum erro de sintaxe.
   - **Gerador de Scripts** - Gera Scripts SQL básicos (INSERT, UPDATE e DELETE) com base nos dados fornecidos.
   - **Formatação de Consulta** - Recebe um SCRIPT SQL e formata o mesmo na identação correta, facilitando na hora de visualizar os dados e realizar a consulta.
-  - **Exportação de Consulta** - Recebe o resultado de uma consulta SQL e fornece a opção de exportar em **CSV**,**XML** ou **EXCEL (.xlsx)** assim facilitando a manipulação de dados externamente.
+  - **Exportação de Consulta** - Recebe o resultado de uma consulta SQL e fornece a opção de exportar em **CSV, XML** ou **EXCEL (.xlsx)** assim facilitando a manipulação de dados externamente.
 
 ## Instalação
 
 O projeto já está compilado, basta apenas acessar a aba de [Release](https://github.com/Vini-Paixao/Quebra-Galho/releases) e realizar o download do .exe
-(Disponível somente para Windows.)
+(Disponível somente para Windows).
 
-Caso prefira pode Fazer manualmente na sua IDE de preferência, certifiquesse de ter o Python instalado na máquina, e siga os passos a passos:
+Caso prefira pode Fazer manualmente na sua IDE de preferência, certifiquesse de ter o Python e o pip instalado na máquina, e siga os passos a passos:
 
 Clonando o Projeto:
 
@@ -36,7 +36,7 @@ Entrando na pasta do projeto:
 Instalando as depêndencias externas:
 
 ```bash
-  pip install sqlparse
+  pip install sqlparse pandas faker xlsxwriter lxml
 ```
 
 Executando:
