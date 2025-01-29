@@ -59,6 +59,7 @@ def exportar_dados_interface():
 
     # Fontes
     bold = font.Font(family="Verdana", size=12, weight="bold")
+    bold_b = font.Font(family="Verdana", size=10, weight="bold")
     regular = font.Font(family="Verdana", size=10, weight="normal")
 
     instrucao_label = tk.Label(janela, text="Cole os resultados da consulta SQL (incluindo cabeçalhos):", font=bold, bg='lightgreen')
@@ -78,10 +79,10 @@ def exportar_dados_interface():
     for text, mode in formatos:
         tk.Radiobutton(janela, text=text, variable=formato_var, value=mode, font=regular, bg='lightgreen').pack(anchor="w")
 
-    exportar_button = tk.Button(janela, text="Exportar", font=regular, command=exportar)
+    exportar_button = tk.Button(janela, text="Exportar", bg="green", foreground="white", font=bold_b, command=exportar)
     exportar_button.pack(pady=10)
     
     # Botão para fechar a janela
-    tk.Button(janela, text="Fechar", font=regular, command=janela.destroy).pack(pady=5)
+    tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy).pack(pady=5)
 
     janela.mainloop()

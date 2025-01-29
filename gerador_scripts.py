@@ -79,20 +79,20 @@ def menu_gerador_scripts():
     frame_botoes = tk.Frame(janela, bg='lightgreen')
     frame_botoes.pack(pady=10)
 
-    btn_insert = tk.Button(frame_botoes, text="Gerar script INSERT", font=regular, command=gerar_insert)
+    btn_insert = tk.Button(frame_botoes, text="Gerar script INSERT", bg="green", foreground="white", font=regular, command=gerar_insert)
     btn_insert.grid(row=0, column=0, padx=5)
 
-    btn_update = tk.Button(frame_botoes, text="Gerar script UPDATE", font=regular, command=gerar_update)
+    btn_update = tk.Button(frame_botoes, text="Gerar script UPDATE", bg="blue", foreground="white", font=regular, command=gerar_update)
     btn_update.grid(row=0, column=1, padx=5)
 
-    btn_delete = tk.Button(frame_botoes, text="Gerar script DELETE", font=regular, command=gerar_delete)
+    btn_delete = tk.Button(frame_botoes, text="Gerar script DELETE", bg="purple", foreground="white", font=regular, command=gerar_delete)
     btn_delete.grid(row=0, column=2, padx=5)
 
     global resultado_texto
     resultado_texto = tk.Text(janela, height=12, font=regular, width=60)
     resultado_texto.pack(pady=5)
 
-    btn_sair = tk.Button(janela, text="Fechar", font=regular, command=janela.destroy)
+    btn_sair = tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy)
     btn_sair.pack(pady=5)
 
     janela.mainloop()

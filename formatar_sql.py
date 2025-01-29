@@ -69,7 +69,7 @@ def formatar_sql_interface():
     entrada_texto.pack(pady=5)
 
     # Botão para formatar as consultas
-    tk.Button(janela, text="Formatar SQL", font=regular, command=formatar).pack(pady=5)
+    tk.Button(janela, text="Formatar SQL", bg="green", foreground="white", font=regular, command=formatar).pack(pady=5)
 
     # Campo de saída para as consultas formatadas
     tk.Label(janela, text="Consultas SQL formatadas:", font=bold, bg='lightgreen').pack(pady=5)
@@ -77,6 +77,6 @@ def formatar_sql_interface():
     resultado_texto.pack(pady=5)
 
     # Botão para fechar a janela
-    tk.Button(janela, text="Fechar", font=regular, command=janela.destroy).pack(pady=5)
+    tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy).pack(pady=5)
 
     janela.mainloop()

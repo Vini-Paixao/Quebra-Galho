@@ -203,7 +203,7 @@ def gerador_dados_interface():
     lista_campos = tk.Listbox(janela, width=80, height=8, font=regular)
     lista_campos.pack()
 
-    tk.Button(janela, text="Gerar Dados e Salvar", font=bold, command=gerar_dados).pack(pady=15)
-    tk.Button(janela, text="Fechar", font=regular, bg="red", command=janela.destroy).pack(pady=5)
+    tk.Button(janela, text="Gerar Dados e Salvar", font=bold, bg="lightgreen", command=gerar_dados).pack(pady=15)
+    tk.Button(janela, text="Fechar", font=regular, bg="#dc3545", command=janela.destroy).pack(pady=5)
 
     janela.mainloop()

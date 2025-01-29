@@ -54,7 +54,7 @@ def alinhar_valores_interface():
     remover_duplicatas_check = tk.Checkbutton(janela, text="Remover duplicatas", variable=remover_duplicatas_var, font=regular, bg='lightblue')
     remover_duplicatas_check.pack(pady=5)
 
-    alinhar_button = tk.Button(janela, text="Alinhar", font=regular, command=alinhar)
+    alinhar_button = tk.Button(janela, text="Alinhar", bg="lightgreen", font=regular, command=alinhar)
     alinhar_button.pack(pady=5)
 
     # Campo de entrada para o resultado
@@ -62,6 +62,6 @@ def alinhar_valores_interface():
     resultado_entry.pack(pady=5)
     
     # Botão para fechar a janela
-    tk.Button(janela, text="Fechar", font=regular, command=janela.destroy).pack(pady=5)
+    tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy).pack(pady=5)
 
     janela.mainloop()

@@ -67,8 +67,8 @@ def validador_sintaxe_interface():
     text_area = scrolledtext.ScrolledText(janela, width=55, height=10, font=regular)
     text_area.pack(pady=5)
 
-    btn_validar = tk.Button(janela, text="Validar Sintaxe", font=regular, command=validar)
+    btn_validar = tk.Button(janela, text="Validar Sintaxe", bg="green", foreground="white", font=regular, command=validar)
     btn_validar.pack(pady=5)
 
-    btn_fechar = tk.Button(janela, text="Fechar", font=regular, command=janela.destroy)
+    btn_fechar = tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy)
     btn_fechar.pack(pady=5)

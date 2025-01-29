@@ -8,11 +8,15 @@ from gerador_scripts import menu_gerador_scripts
 from formatar_sql import formatar_sql_interface
 from tkinter import font
 import tkinter as tk
+import webbrowser
+
+def abrir_url(url):
+    webbrowser.open_new(url)
 
 def menu_principal():
     janela = tk.Tk()
     janela.title("Quebra Galho")
-    janela.geometry("360x410")
+    janela.geometry("360x500")
     janela.configure(bg='lightblue')
     
     # Fontes
@@ -55,14 +59,54 @@ def menu_principal():
     btn_gerar_dados = tk.Button(janela, text="Gerar Dados Fictícios", font=regular, command=gerador_dados_interface)
     btn_gerar_dados.pack(pady=5)
 
-    btn_funcoes_sql = tk.Button(janela, text="Funções SQL", font=regular, command=menu_sql)
+    btn_funcoes_sql = tk.Button(janela, text="Funções SQL", bg="lightgreen", font=regular, command=menu_sql)
     btn_funcoes_sql.pack(pady=5)
+    
+    btn_codigo_fonte = tk.Button(
+        janela, 
+        text="Código Fonte do Programa", 
+        font=regular, 
+        command=lambda: abrir_url("https://github.com/Vini-Paixao/Quebra-Galho"),
+        bg="#6c757d",  # Cinza
+        fg="white"
+    )
+    btn_codigo_fonte.pack(pady=5)
 
-    btn_encerrar = tk.Button(janela, text="Encerrar", font=regular, command=janela.quit)
+    btn_encerrar = tk.Button(
+        janela, 
+        text="Encerrar", 
+        bg="#dc3545",  # Vermelho
+        fg="white",
+        font=regular, 
+        command=janela.quit
+    )
     btn_encerrar.pack(pady=5)
     
     txt_autor = tk.Label(janela, text="Desenvolvido por Marcus Paixão!", font=autor, bg='lightblue')
     txt_autor.pack(pady=10)
+    
+    rede_social_frame = tk.Frame(janela, bg='lightblue')
+    rede_social_frame.pack(pady=5)
+
+    btn_site = tk.Button(
+        rede_social_frame, 
+        text="Meu Site Pessoal/Portfólio", 
+        font=regular,
+        command=lambda: abrir_url("https://marcuspaixao.com.br"),
+        bg="#167ee4",  # Azul Site
+        fg="white"
+    )
+    btn_site.pack(side=tk.LEFT, padx=5)
+
+    btn_github_perfil = tk.Button(
+        rede_social_frame, 
+        text="Meu GitHub", 
+        font=regular,
+        command=lambda: abrir_url("https://github.com/Vini-Paixao"),
+        bg="#181717",  # Preto GitHub
+        fg="white"
+    )
+    btn_github_perfil.pack(side=tk.LEFT, padx=5)
 
     janela.mainloop()
 
@@ -90,5 +134,5 @@ def menu_sql():
     btn_exporta = tk.Button(janela, text="Exportar Consultas SQL", font=regular, command=exportar_dados_interface)
     btn_exporta.pack(pady=5)
 
-    btn_voltar = tk.Button(janela, text="Voltar", font=regular, command=janela.destroy)
+    btn_voltar = tk.Button(janela, text="Voltar", bg="lightblue", font=regular, command=janela.destroy)
     btn_voltar.pack(pady=5)

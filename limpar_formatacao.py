@@ -34,7 +34,7 @@ def limpar_formatacao():
     entrada = tk.Entry(janela, width=50)
     entrada.pack(pady=5)
 
-    btn_processar = tk.Button(janela, text="Processar", font=regular, command=processar)
+    btn_processar = tk.Button(janela, text="Processar", bg="lightgreen", font=regular, command=processar)
     btn_processar.pack(pady=5)
 
     # Campo para exibir o resultado
@@ -42,6 +42,6 @@ def limpar_formatacao():
     resultado_entry.pack(pady=5)
     
     # Botão para fechar a janela
-    tk.Button(janela, text="Fechar", font=regular, command=janela.destroy).pack(pady=5)
+    tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy).pack(pady=5)
 
     janela.mainloop()

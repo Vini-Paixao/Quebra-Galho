@@ -31,7 +31,7 @@ def converter_data_interface():
     entrada = tk.Entry(janela, width=50, font=regular)
     entrada.pack(pady=5)
 
-    btn_processar = tk.Button(janela, text="Processar", font=regular, command=processar)
+    btn_processar = tk.Button(janela, text="Processar", bg="lightgreen", font=regular, command=processar)
     btn_processar.pack(pady=5)
 
     # Campo para exibir o resultado
@@ -39,7 +39,7 @@ def converter_data_interface():
     resultado_entry.pack(pady=5)
     
     # Botão para fechar a janela
-    btn_encerrar = tk.Button(janela, text="Fechar", font=regular, command=janela.destroy)
+    btn_encerrar = tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy)
     btn_encerrar.pack(pady=5)
 
     janela.mainloop()
