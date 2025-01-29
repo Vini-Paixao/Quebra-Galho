@@ -6,13 +6,13 @@ Um programa em Python que auxilia em tarefas do dia a dia, facilitando assim tar
 ## Funcionalidades
 
 - **Valores em Linha** - Recebe uma certa quantidade de dados empilhados um em cima do outro, e transforma todos em linha separado por vírgula, facilitando consultas SQL.
-- **Limpar Formatação** - Recebe qualquer tipo de númeração com máscara (CPF, NF-e, CEP) e retira todos os caracteres não númericos, mantendo apenas os números e facilitando consultas SQL.
+- **Limpar Formatação** - Recebe qualquer tipo de numeração com máscara (CPF, NF-e, CEP) e retira todos os caracteres não numéricos, mantendo apenas os números e facilitando consultas SQL.
 - **Converter Data** - Recebe datas em diversos formatos e automaticamente coloca em formato americano para consultas SQL
 - **Funções SQL**
   - **Validar Sintaxe** - Recebe um Script SQL e faz a validação se o mesmo é um script que rodaria sem nenhum erro de sintaxe.
   - **Gerador de Scripts** - Gera Scripts SQL básicos (INSERT, UPDATE e DELETE) com base nos dados fornecidos.
-  - **Formatação de Consulta** - Recebe um SCRIPT SQL e formata o mesmo na identação correta, facilitando na hora de visualizar os dados e realizar a consulta.
-  - **Exportação de Consulta** - Recebe o resultado de uma consulta SQL e fornece a opção de exportar em **CSV, XML** ou **EXCEL (.xlsx)** assim facilitando a manipulação de dados externamente.
+  - **Formatação de Consulta** - Recebe um SCRIPT SQL e formata o mesmo na indentação correta, facilitando na hora de visualizar os dados e realizar a consulta.
+  - **Exportação de Consulta** - Recebe o resultado de uma consulta SQL e fornece a opção de exportar em **CSV, XML** ou **Excel (.xlsx)** assim facilitando a manipulação de dados externamente.
 
 ## Instalação
 
