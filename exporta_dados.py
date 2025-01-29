@@ -20,8 +20,8 @@ def exportar_dados_interface():
 
         # Verifica o número de registros
         num_registros = len(df)
-        if num_registros > 5000:
-            messagebox.showwarning("Aviso", f"O número de registros ({num_registros}) excede o limite de 5.000.")
+        if num_registros > 10000:
+            messagebox.showwarning("Aviso", f"O número de registros ({num_registros}) excede o limite de 10.000.")
             return
 
         formato = formato_var.get()
