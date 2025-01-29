@@ -1,6 +1,7 @@
 from alinhar_valores import alinhar_valores_interface
 from converter_data import converter_data_interface
 from exporta_dados import exportar_dados_interface
+from gerador_dados import gerador_dados_interface
 from limpar_formatacao import limpar_formatacao
 from validar_sintaxe import validador_sintaxe_interface
 from gerador_scripts import menu_gerador_scripts
@@ -11,7 +12,7 @@ import tkinter as tk
 def menu_principal():
     janela = tk.Tk()
     janela.title("Quebra Galho")
-    janela.geometry("360x360")
+    janela.geometry("360x410")
     janela.configure(bg='lightblue')
     
     # Fontes
@@ -50,6 +51,9 @@ def menu_principal():
 
     btn_converter_data = tk.Button(janela, text="Converter Data", font=regular, command=converter_data_interface)
     btn_converter_data.pack(pady=5)
+    
+    btn_gerar_dados = tk.Button(janela, text="Gerar Dados Fictícios", font=regular, command=gerador_dados_interface)
+    btn_gerar_dados.pack(pady=5)
 
     btn_funcoes_sql = tk.Button(janela, text="Funções SQL", font=regular, command=menu_sql)
     btn_funcoes_sql.pack(pady=5)
