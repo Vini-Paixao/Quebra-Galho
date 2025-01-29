@@ -3,20 +3,19 @@ from converter_data import converter_data_interface
 from exporta_dados import exportar_dados_interface
 from gerador_dados import gerador_dados_interface
 from limpar_formatacao import limpar_formatacao
+from utilidades import abrir_url, resource_path
 from validar_sintaxe import validador_sintaxe_interface
 from gerador_scripts import menu_gerador_scripts
 from formatar_sql import formatar_sql_interface
 from tkinter import font
 import tkinter as tk
-import webbrowser
-
-def abrir_url(url):
-    webbrowser.open_new(url)
 
 def menu_principal():
     janela = tk.Tk()
     janela.title("Quebra Galho")
     janela.geometry("360x500")
+    janela.minsize(360, 500)
+    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.configure(bg='lightblue')
     
     # Fontes
@@ -114,7 +113,8 @@ def menu_sql():
     janela = tk.Toplevel()
     janela.title("Scripts SQL")
     janela.geometry("300x250")
-    janela.minsize(200, 200)
+    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
+    janela.minsize(300, 250)
     janela.configure(bg='lightgreen')
 
     # Título

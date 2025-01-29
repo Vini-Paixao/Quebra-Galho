@@ -3,6 +3,8 @@ from tkinter import ttk, messagebox, filedialog, font
 import pandas as pd
 from io import StringIO
 
+from utilidades import resource_path
+
 def exportar_dados_interface():
     def exportar():
         conteudo = text_area.get("1.0", tk.END).strip()
@@ -55,6 +57,8 @@ def exportar_dados_interface():
     janela = tk.Toplevel()
     janela.title("Exportar Dados")
     janela.geometry("600x530")
+    janela.minsize(600, 530)
+    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.configure(bg='lightgreen')
 
     # Fontes

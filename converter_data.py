@@ -4,6 +4,8 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import font
 
+from utilidades import resource_path
+
 
 def converter_data_interface():
     def processar():
@@ -20,6 +22,8 @@ def converter_data_interface():
     janela = tk.Toplevel()
     janela.title("Converter Data")
     janela.geometry("450x220")
+    janela.minsize(450, 220)
+    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.configure(bg='lightblue')
     
     bold = font.Font(family="Verdana", size=16, weight="bold")

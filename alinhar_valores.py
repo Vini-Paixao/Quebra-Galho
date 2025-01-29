@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import font
 
+from utilidades import resource_path
+
 def alinhar_valores_interface():
     def alinhar():
         conteudo = text_area.get("1.0", tk.END).strip()
@@ -27,6 +29,8 @@ def alinhar_valores_interface():
     janela = tk.Toplevel()
     janela.title("Alinhar Valores")
     janela.geometry("550x440")
+    janela.minsize(550, 440)
+    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.configure(bg='lightblue')
     
     # Fontes

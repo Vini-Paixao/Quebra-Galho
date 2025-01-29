@@ -36,7 +36,7 @@ Entrando na pasta do projeto:
 Instalando as depêndencias externas:
 
 ```bash
-  pip install sqlparse pandas faker xlsxwriter lxml
+  pip install sqlfluff sqlparse pandas faker xlsxwriter lxml
 ```
 
 Executando:

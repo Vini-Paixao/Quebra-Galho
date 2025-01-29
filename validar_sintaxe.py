@@ -4,6 +4,8 @@ import os
 from tkinter import font, messagebox, scrolledtext
 import tkinter as tk
 
+from utilidades import resource_path
+
 def capturar_entrada_sql():
     """
     Captura múltiplas linhas de entrada do usuário até uma linha vazia ser inserida.
@@ -55,6 +57,8 @@ def validador_sintaxe_interface():
     janela = tk.Toplevel()
     janela.title("Validador de Sintaxe SQL")
     janela.geometry("500x300")
+    janela.minsize(500, 300)
+    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.configure(bg='lightgreen')
     
     # Fontes

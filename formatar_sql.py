@@ -3,6 +3,8 @@ import sqlparse
 import tkinter as tk
 from tkinter import scrolledtext, messagebox
 
+from utilidades import resource_path
+
 
 def formatar_sql():
     print("Insira as consultas SQL a serem formatadas (pressione Enter em uma linha vazia para finalizar):")
@@ -58,6 +60,8 @@ def formatar_sql_interface():
     janela.title("Formatador de SQL")
     janela.configure(bg='lightgreen')
     janela.geometry('600x510')
+    janela.minsize(600, 510)
+    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     
     # Fontes
     bold = font.Font(family="Verdana", size=12, weight="bold")

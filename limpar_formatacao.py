@@ -2,6 +2,8 @@ import re
 import tkinter as tk
 from tkinter import font
 
+from utilidades import resource_path
+
 def extrair_numeros(texto):
     return re.sub(r'\D', '', texto)
 
@@ -23,6 +25,8 @@ def limpar_formatacao():
     janela = tk.Toplevel()
     janela.title("Limpar Formatação")
     janela.geometry("360x170")
+    janela.minsize(360, 170)
+    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.configure(bg='lightblue')
     
     # Fontes

@@ -4,10 +4,15 @@ import pandas as pd
 from faker import Faker
 from typing import Dict, List
 
+from utilidades import resource_path
+
 def mostrar_ajuda_regras():
     ajuda_janela = tk.Toplevel()
     ajuda_janela.title("Ajuda - Regras Personalizadas")
     ajuda_janela.geometry("450x530")
+    ajuda_janela.minsize(450, 530)
+    ajuda_janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
+
     
     texto_ajuda = """
     Como usar as regras opcionais para cada campo:
@@ -136,6 +141,8 @@ def gerador_dados_interface():
     janela = tk.Toplevel()
     janela.title("Gerador de Dados Fictícios")
     janela.geometry("700x530")
+    janela.minsize(700, 530)
+    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.configure(bg='lightblue')
 
     # Fontes

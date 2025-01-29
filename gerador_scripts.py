@@ -3,6 +3,8 @@ import tkinter as tk
 from tkinter import messagebox, simpledialog
 from tkinter import font
 
+from utilidades import resource_path
+
 def obter_nome_tabela():
     while True:
         tabela = simpledialog.askstring("Nome da Tabela", "Informe o nome da tabela:")
@@ -73,6 +75,8 @@ def menu_gerador_scripts():
     janela.title("Gerador de Scripts SQL")
     janela.configure(bg='lightgreen')
     janela.geometry('800x330')
+    janela.minsize(800, 330)
+    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     
     regular = font.Font(family="Verdana", size=8, weight="normal")
 
