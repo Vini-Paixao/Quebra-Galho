@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk, messagebox, filedialog, font
 import pandas as pd
 from faker import Faker
-from typing import Dict, List
 
 from utilidades import resource_path
 
