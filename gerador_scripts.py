@@ -40,7 +40,7 @@ def gerar_insert():
         return
     colunas_str = ", ".join(colunas)
     valores_str = ", ".join(f"'{v}'" for v in valores)
-    insert_sql = f"INSERT INTO {tabela} ({colunas_str}) VALUES ({valores_str});"
+    insert_sql = f"INSERT INTO {tabela} ({colunas_str}) VALUES ({valores_str})"
     resultado_texto.insert(tk.END, f"\nScript INSERT gerado:\n{insert_sql}\n")
 
 def gerar_update():
@@ -56,7 +56,7 @@ def gerar_update():
     if not condicao:
         messagebox.showwarning("Aviso", "Condição WHERE não informada. Operação cancelada.")
         return
-    update_sql = f"UPDATE {tabela} SET {set_clauses} WHERE {condicao};"
+    update_sql = f"UPDATE {tabela} SET {set_clauses} WHERE {condicao}"
     resultado_texto.insert(tk.END, f"\nScript UPDATE gerado:\n{update_sql}\n")
 
 def gerar_delete():
@@ -67,7 +67,7 @@ def gerar_delete():
     if not condicao:
         messagebox.showwarning("Aviso", "Condição WHERE não informada. Operação cancelada.")
         return
-    delete_sql = f"DELETE FROM {tabela} WHERE {condicao};"
+    delete_sql = f"DELETE FROM {tabela} WHERE {condicao}"
     resultado_texto.insert(tk.END, f"\nScript DELETE gerado:\n{delete_sql}\n")
 
 def menu_gerador_scripts():

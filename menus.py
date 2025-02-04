@@ -1,4 +1,5 @@
 from alinhar_valores import alinhar_valores_interface
+from caulcular_dias_uteis import calcular_dias_uteis_interface
 from converter_data import converter_data_interface
 from exporta_dados import exportar_dados_interface
 from gerador_dados import gerador_dados_interface
@@ -51,25 +52,15 @@ def menu_principal():
 
     btn_limpar_formatacao = tk.Button(janela, text="Limpar Formatação", font=regular, command=limpar_formatacao)
     btn_limpar_formatacao.pack(pady=5)
-
-    btn_converter_data = tk.Button(janela, text="Converter Data", font=regular, command=converter_data_interface)
-    btn_converter_data.pack(pady=5)
     
     btn_gerar_dados = tk.Button(janela, text="Gerar Dados Fictícios", font=regular, command=gerador_dados_interface)
     btn_gerar_dados.pack(pady=5)
+    
+    btn_menu_datas = tk.Button(janela, text="Funções Datas", bg= "#bc7ff6", font=regular, command=menu_datas)
+    btn_menu_datas.pack(pady=5)
 
     btn_funcoes_sql = tk.Button(janela, text="Funções SQL", bg="lightgreen", font=regular, command=menu_sql)
     btn_funcoes_sql.pack(pady=5)
-    
-    btn_codigo_fonte = tk.Button(
-        janela, 
-        text="Código Fonte do Programa", 
-        font=regular, 
-        command=lambda: abrir_url("https://github.com/Vini-Paixao/Quebra-Galho"),
-        bg="#6c757d",  # Cinza
-        fg="white"
-    )
-    btn_codigo_fonte.pack(pady=5)
 
     btn_encerrar = tk.Button(
         janela, 
@@ -89,7 +80,7 @@ def menu_principal():
 
     btn_site = tk.Button(
         rede_social_frame, 
-        text="Meu Site Pessoal/Portfólio", 
+        text="Meu Site", 
         font=regular,
         command=lambda: abrir_url("https://marcuspaixao.com.br"),
         bg="#167ee4",  # Azul Site
@@ -106,6 +97,16 @@ def menu_principal():
         fg="white"
     )
     btn_github_perfil.pack(side=tk.LEFT, padx=5)
+    
+    btn_codigo_fonte = tk.Button(
+        janela, 
+        text="Código Fonte do Programa", 
+        font=regular, 
+        command=lambda: abrir_url("https://github.com/Vini-Paixao/Quebra-Galho"),
+        bg="#6c757d",  # Cinza
+        fg="white"
+    )
+    btn_codigo_fonte.pack(pady=5)
 
     janela.mainloop()
 
@@ -132,6 +133,34 @@ def menu_sql():
     btn_formatacao_consultas.pack(pady=5)
     
     btn_exporta = tk.Button(janela, text="Exportar Consultas SQL", font=regular, command=exportar_dados_interface)
+    btn_exporta.pack(pady=5)
+
+    btn_voltar = tk.Button(janela, text="Voltar", bg="lightblue", font=regular, command=janela.destroy)
+    btn_voltar.pack(pady=5)
+
+def menu_datas():
+    janela = tk.Toplevel()
+    janela.title("Ferramentas de Datas")
+    janela.geometry("350x250")
+    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
+    janela.minsize(300, 250)
+    janela.configure(bg='#bc7ff6')
+
+    # Título
+    titulo = tk.Label(janela, text="Ferramentas de Datas", font=bold,bg='#bc7ff6')
+    titulo.pack(pady=10)
+
+    # Botões do menu SQL
+    btn_validador_sintaxe = tk.Button(janela, text="Converter Datas", font=regular, command=converter_data_interface)
+    btn_validador_sintaxe.pack(pady=5)
+
+    btn_gerador_scripts = tk.Button(janela, text="Calcular Dias Úteis", font=regular, command=calcular_dias_uteis_interface)
+    btn_gerador_scripts.pack(pady=5)
+
+    btn_formatacao_consultas = tk.Button(janela, text="Em Desenvolvimento", font=regular)
+    btn_formatacao_consultas.pack(pady=5)
+    
+    btn_exporta = tk.Button(janela, text="Em Desenvolvimento", font=regular)
     btn_exporta.pack(pady=5)
 
     btn_voltar = tk.Button(janela, text="Voltar", bg="lightblue", font=regular, command=janela.destroy)

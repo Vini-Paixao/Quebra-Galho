@@ -22,8 +22,8 @@ def exportar_dados_interface():
 
         # Verifica o número de registros
         num_registros = len(df)
-        if num_registros > 10000:
-            messagebox.showwarning("Aviso", f"O número de registros ({num_registros}) excede o limite de 10.000.")
+        if num_registros > 500000:
+            messagebox.showwarning("Aviso", f"O número de registros ({num_registros}) excede o limite de 500.000!")
             return
 
         formato = formato_var.get()
@@ -69,7 +69,7 @@ def exportar_dados_interface():
     instrucao_label = tk.Label(janela, text="Cole os resultados da consulta SQL (incluindo cabeçalhos):", font=bold, bg='lightgreen')
     instrucao_label.pack(pady=5)
     
-    limite_label = tk.Label(janela, text="* Limite de 5.000 registros para exportação.", font=regular, bg='lightgreen')
+    limite_label = tk.Label(janela, text="* Limite de 10.000 registros para exportação.", font=regular, bg='lightgreen')
     limite_label.pack(pady=5)
 
     text_area = tk.Text(janela, wrap="none", width=70, height=15, font=regular)

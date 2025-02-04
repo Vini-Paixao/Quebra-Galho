@@ -6,7 +6,6 @@ from tkinter import font
 
 from utilidades import resource_path
 
-
 def converter_data_interface():
     def processar():
         data_input = entrada.get()
@@ -24,13 +23,13 @@ def converter_data_interface():
     janela.geometry("450x220")
     janela.minsize(450, 220)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
-    janela.configure(bg='lightblue')
+    janela.configure(bg='#bc7ff6')
     
     bold = font.Font(family="Verdana", size=16, weight="bold")
     regular = font.Font(family="Verdana", size=10, weight="normal")
 
-    tk.Label(janela, text="Informe a Data:", font=bold, bg='lightblue').pack(pady=5)
-    tk.Label(janela, text="Valores aceitos - DD/MM/YYYY, DD/MM, DDMMYYYY, DDMM", font=regular, bg='lightblue').pack(pady=5)
+    tk.Label(janela, text="Informe a Data:", font=bold, bg='#bc7ff6').pack(pady=5)
+    tk.Label(janela, text="Valores aceitos - DD/MM/YYYY, DD/MM, DDMMYYYY, DDMM", font=regular, bg='#bc7ff6').pack(pady=5)
 
     entrada = tk.Entry(janela, width=50, font=regular)
     entrada.pack(pady=5)
