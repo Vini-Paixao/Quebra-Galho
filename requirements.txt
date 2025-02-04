@@ -1,0 +1,8 @@
+Faker==35.0.0
+pandas==2.2.3
+python_dateutil==2.9.0.post0
+sqlparse==0.5.3
+tkcalendar==1.6.1
+sqlfluff
+xlsxwriter
+lxml
