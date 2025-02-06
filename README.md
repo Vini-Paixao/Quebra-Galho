@@ -24,7 +24,7 @@ Caso não queira ter que compilar o arquivo no seu computador o projeto já est�
 
 1. Acesse a aba de [Release](https://github.com/Vini-Paixao/Quebra-Galho/releases) e realizar o download do .exe (Disponível somente para **Windows**).
 
-2. Após baixar o arquivo dê 2 cliques no arquivo .exe e clique em "Mais Informações" e depois clique em "Sim", conforme Imagens abaixo. (Essa mensagem aparecer por se tratar de um programa não licenciado pela Microsoft na qual ela retorna que pode se tratar de vírus, porém esse programa é de código aberto e não tem nenhum tipo de malware.)
+2. Após baixar o arquivo dê 2 cliques no arquivo .exe e clique em "Mais Informações" e depois clique em "Sim", conforme Imagens abaixo. (Essa mensagem aparecer por se tratar de um programa não licenciado pela Microsoft na qual ela retorna que pode se tratar de vírus)
 ![Mensagem do Windows](image/Print-1.png)
 ![Mensagem do Windows 2](image/Print-2.png)
 
