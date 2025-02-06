@@ -28,6 +28,8 @@ Caso não queira ter que compilar o arquivo no seu computador o projeto já est�
 ![Mensagem do Windows](image/Print-1.png)
 ![Mensagem do Windows 2](image/Print-2.png)
 
+##
+
 ### Manual
 
 Caso prefira pode Fazer manualmente na sua IDE de preferência, certifiquesse de ter o Python e o pip instalado na máquina, e siga os passos a passos:
