@@ -27,18 +27,18 @@ def limpar_formatacao():
     janela.geometry("360x170")
     janela.minsize(360, 170)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
-    janela.configure(bg='lightblue')
+    janela.configure(bg='#7acbe6')
     
     # Fontes
     bold = font.Font(family="Verdana", size=12, weight="bold")
     regular = font.Font(family="Verdana", size=10, weight="normal")
 
-    tk.Label(janela, text="Informe o valor a retirar a formatação:", font=bold, bg='lightblue').pack(pady=5)
+    tk.Label(janela, text="Informe o valor a retirar a formatação:", font=bold, bg='#7acbe6').pack(pady=5)
 
     entrada = tk.Entry(janela, width=50)
     entrada.pack(pady=5)
 
-    btn_processar = tk.Button(janela, text="Processar", bg="lightgreen", font=regular, command=processar)
+    btn_processar = tk.Button(janela, text="Processar", bg="#67d167", font=regular, command=processar)
     btn_processar.pack(pady=5)
 
     # Campo para exibir o resultado

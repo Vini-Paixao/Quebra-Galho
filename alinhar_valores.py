@@ -30,21 +30,21 @@ def alinhar_valores_interface():
     janela.title("Alinhar Valores")
     janela.geometry("550x440")
     janela.minsize(550, 440)
-    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
-    janela.configure(bg='lightblue')
+    janela.iconbitmap(resource_path('icon.ico'))
+    janela.configure(bg='#7acbe6')
     
     # Fontes
     bold = font.Font(family="Verdana", size=12, weight="bold")
     regular = font.Font(family="Verdana", size=10, weight="normal")
 
-    instrucao_label = tk.Label(janela, text="Informe os valores, um por linha, e clique em 'Alinhar':", font=bold, bg='lightblue')
+    instrucao_label = tk.Label(janela, text="Informe os valores, um por linha, e clique em 'Alinhar':", font=bold, bg='#7acbe6')
     instrucao_label.pack(pady=5)
 
     text_area = tk.Text(janela, width=60, height=10, font=regular)
     text_area.pack(pady=5)
 
     # Opções de delimitador
-    delimitador_label = tk.Label(janela, text="Escolha o delimitador:", font=regular, bg='lightblue')
+    delimitador_label = tk.Label(janela, text="Escolha o delimitador:", font=regular, bg='#7acbe6')
     delimitador_label.pack(pady=5)
 
     delimitador_var = tk.StringVar(value=",")  # Valor padrão é vírgula
@@ -55,10 +55,10 @@ def alinhar_valores_interface():
 
     # Checkbox para remover duplicatas
     remover_duplicatas_var = tk.BooleanVar()
-    remover_duplicatas_check = tk.Checkbutton(janela, text="Remover duplicatas", variable=remover_duplicatas_var, font=regular, bg='lightblue')
+    remover_duplicatas_check = tk.Checkbutton(janela, text="Remover duplicatas", variable=remover_duplicatas_var, font=regular, bg='#7acbe6')
     remover_duplicatas_check.pack(pady=5)
 
-    alinhar_button = tk.Button(janela, text="Alinhar", bg="lightgreen", font=regular, command=alinhar)
+    alinhar_button = tk.Button(janela, text="Alinhar", bg="#67d167", font=regular, command=alinhar)
     alinhar_button.pack(pady=5)
 
     # Campo de entrada para o resultado

@@ -34,7 +34,7 @@ def converter_data_interface():
     entrada = tk.Entry(janela, width=50, font=regular)
     entrada.pack(pady=5)
 
-    btn_processar = tk.Button(janela, text="Processar", bg="lightgreen", font=regular, command=processar)
+    btn_processar = tk.Button(janela, text="Processar", bg="#67d167", font=regular, command=processar)
     btn_processar.pack(pady=5)
 
     # Campo para exibir o resultado

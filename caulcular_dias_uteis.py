@@ -9,10 +9,10 @@ from utilidades import resource_path
 
 # Função para gerar feriados brasileiros
 def gerar_feriados(ano):
-    from datetime import date  # Adicione esta linha
+    from datetime import date
     
     feriados = [
-        # Datas fixas (usando date em vez de datetime)
+        # Datas fixas
         date(ano, 1, 1),   # Ano Novo
         date(ano, 4, 21),  # Tiradentes
         date(ano, 5, 1),   # Dia do Trabalho
@@ -22,13 +22,13 @@ def gerar_feriados(ano):
         date(ano, 11, 15), # Proclamação da República
         date(ano, 12, 25), # Natal
         
-        # Datas móveis (já são objetos date)
+        # Datas móveis
         easter.easter(ano) - timedelta(days=47),  # Carnaval
         easter.easter(ano) - timedelta(days=2),   # Sexta-feira Santa
         easter.easter(ano),                       # Páscoa
         easter.easter(ano) + timedelta(days=60)   # Corpus Christi
     ]
-    return feriados  # Remova o .date()
+    return feriados
 
 def calcular_dias_uteis(data_inicio, data_fim):
     try:
@@ -76,9 +76,9 @@ def calcular_dias_uteis_interface():
     
     janela = tk.Toplevel()
     janela.title("Calculadora de Dias Úteis")
-    janela.geometry("450x340")
-    janela.minsize(450, 340)
-    janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
+    janela.geometry("450x300")
+    janela.minsize(450, 300)
+    janela.iconbitmap(resource_path('icon.ico'))
     janela.configure(bg='#bc7ff6')
     
     # Fontes
@@ -100,14 +100,17 @@ def calcular_dias_uteis_interface():
                         locale='pt_BR')
     fim_entry.pack(pady=5)
     
-    tk.Button(janela, text="Calcular", bg="lightgreen", font=regular, command=calcular).pack(pady=10)
+    tk.Button(janela, text="Calcular", bg="#67d167", font=regular, command=calcular).pack(pady=10)
+    
+    lbl_frame = tk.Frame(janela, bg='#bc7ff6')
+    lbl_frame.pack(pady=5)
     
     # Resultados
-    lbl_resultado_uteis = tk.Label(janela, text="Dias Úteis: -", font=bold, bg='#bc7ff6')
-    lbl_resultado_uteis.pack(pady=5)
+    lbl_resultado_uteis = tk.Label(lbl_frame, text="Dias Úteis: -", font=bold, bg='#bc7ff6')
+    lbl_resultado_uteis.pack(side=tk.LEFT,padx=5)
     
-    lbl_resultado_corridos = tk.Label(janela, text="Dias Corridos: -", font=bold, bg='#bc7ff6')
-    lbl_resultado_corridos.pack(pady=5)
+    lbl_resultado_corridos = tk.Label(lbl_frame, text="Dias Corridos: -", font=bold, bg='#bc7ff6')
+    lbl_resultado_corridos.pack(side=tk.LEFT,padx=5)
     
     # Aviso
     tk.Label(janela, 

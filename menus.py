@@ -2,22 +2,23 @@ from alinhar_valores import alinhar_valores_interface
 from caulcular_dias_uteis import calcular_dias_uteis_interface
 from converter_data import converter_data_interface
 from exporta_dados import exportar_dados_interface
+from formatar_xml import validar_formatar_json_xml_interface
 from gerador_dados import gerador_dados_interface
 from limpar_formatacao import limpar_formatacao
 from utilidades import abrir_url, resource_path
 from validar_sintaxe import validador_sintaxe_interface
 from gerador_scripts import menu_gerador_scripts
 from formatar_sql import formatar_sql_interface
-from tkinter import font
+from tkinter import font, ttk
 import tkinter as tk
 
 def menu_principal():
     janela = tk.Tk()
     janela.title("Quebra Galho")
-    janela.geometry("360x500")
-    janela.minsize(360, 500)
+    janela.geometry("370x510")
+    janela.minsize(370, 510)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
-    janela.configure(bg='lightblue')
+    janela.configure(bg='#7acbe6')
     
     # Fontes
     global bold
@@ -33,7 +34,7 @@ def menu_principal():
     descricao = font.Font(family="Verdana", size=9, weight="normal")
 
     # Título
-    titulo = tk.Label(janela, text="Quebra Galho", font=bold, bg='lightblue')
+    titulo = tk.Label(janela, text="Quebra Galho", font=bold, bg='#7acbe6')
     titulo.pack(pady=5)
     
     # Descrição
@@ -41,7 +42,7 @@ def menu_principal():
         janela, 
         text="Bem-vindo ao Quebra Galho! Esse programa automatiza tarefas repetitivas e facilita seu dia a dia. Ele ainda está em desenvolvimento, então se encontrar bugs ou tiver sugestões, entre em contato. Aproveite!", 
         font=descricao,
-        bg='lightblue',
+        bg='#7acbe6',
         wraplength=340
         )
     desc.pack(pady=5)
@@ -56,26 +57,25 @@ def menu_principal():
     btn_gerar_dados = tk.Button(janela, text="Gerar Dados Fictícios", font=regular, command=gerador_dados_interface)
     btn_gerar_dados.pack(pady=5)
     
-    btn_menu_datas = tk.Button(janela, text="Funções Datas", bg= "#bc7ff6", font=regular, command=menu_datas)
-    btn_menu_datas.pack(pady=5)
-
-    btn_funcoes_sql = tk.Button(janela, text="Funções SQL", bg="lightgreen", font=regular, command=menu_sql)
-    btn_funcoes_sql.pack(pady=5)
-
-    btn_encerrar = tk.Button(
-        janela, 
-        text="Encerrar", 
-        bg="#dc3545",  # Vermelho
-        fg="white",
-        font=regular, 
-        command=janela.quit
-    )
-    btn_encerrar.pack(pady=5)
+    btn_json_xml = tk.Button(janela, text="Validador de JSON/XML", font=regular, command=validar_formatar_json_xml_interface)
+    btn_json_xml.pack(pady=5)
     
-    txt_autor = tk.Label(janela, text="Desenvolvido por Marcus Paixão!", font=autor, bg='lightblue')
+    btn_frame = tk.Frame(janela, bg='#7acbe6')
+    btn_frame.pack(pady=5)
+    
+    btn_menu_datas = tk.Button(btn_frame, text="Funções Datas", bg= "#bc7ff6", font=regular, command=menu_datas)
+    btn_menu_datas.pack(side=tk.LEFT, padx=5)
+
+    btn_funcoes_sql = tk.Button(btn_frame, text="Funções SQL", bg="#67d167", font=regular, command=menu_sql)
+    btn_funcoes_sql.pack(side=tk.LEFT, padx=5)
+    
+    separator = tk.Label(janela, text="_________________________________________", font=autor, bg='#7acbe6')
+    separator.pack(pady=0)
+    
+    txt_autor = tk.Label(janela, text="Desenvolvido por Marcus Paixão!", font=autor, bg='#7acbe6')
     txt_autor.pack(pady=10)
     
-    rede_social_frame = tk.Frame(janela, bg='lightblue')
+    rede_social_frame = tk.Frame(janela, bg='#7acbe6')
     rede_social_frame.pack(pady=5)
 
     btn_site = tk.Button(
@@ -107,6 +107,16 @@ def menu_principal():
         fg="white"
     )
     btn_codigo_fonte.pack(pady=5)
+    
+    btn_encerrar = tk.Button(
+        janela, 
+        text="Encerrar", 
+        bg="#dc3545",  # Vermelho
+        fg="white",
+        font=regular, 
+        command=janela.quit
+    )
+    btn_encerrar.pack(pady=5)
 
     janela.mainloop()
 
@@ -116,10 +126,10 @@ def menu_sql():
     janela.geometry("300x250")
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.minsize(300, 250)
-    janela.configure(bg='lightgreen')
+    janela.configure(bg='#67d167')
 
     # Título
-    titulo = tk.Label(janela, text="Scripts SQL", font=bold,bg='lightgreen')
+    titulo = tk.Label(janela, text="Scripts SQL", font=bold,bg='#67d167')
     titulo.pack(pady=10)
 
     # Botões do menu SQL
@@ -135,7 +145,7 @@ def menu_sql():
     btn_exporta = tk.Button(janela, text="Exportar Consultas SQL", font=regular, command=exportar_dados_interface)
     btn_exporta.pack(pady=5)
 
-    btn_voltar = tk.Button(janela, text="Voltar", bg="lightblue", font=regular, command=janela.destroy)
+    btn_voltar = tk.Button(janela, text="Voltar", bg="#dc3545", font=regular, command=janela.destroy)
     btn_voltar.pack(pady=5)
 
 def menu_datas():
@@ -163,5 +173,5 @@ def menu_datas():
     btn_exporta = tk.Button(janela, text="Em Desenvolvimento", font=regular)
     btn_exporta.pack(pady=5)
 
-    btn_voltar = tk.Button(janela, text="Voltar", bg="lightblue", font=regular, command=janela.destroy)
+    btn_voltar = tk.Button(janela, text="Voltar", bg="#dc3545", font=regular, command=janela.destroy)
     btn_voltar.pack(pady=5)

@@ -73,23 +73,23 @@ def gerar_delete():
 def menu_gerador_scripts():
     janela = tk.Tk()
     janela.title("Gerador de Scripts SQL")
-    janela.configure(bg='lightgreen')
+    janela.configure(bg='#67d167')
     janela.geometry('800x330')
     janela.minsize(800, 330)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     
     regular = font.Font(family="Verdana", size=8, weight="normal")
 
-    frame_botoes = tk.Frame(janela, bg='lightgreen')
+    frame_botoes = tk.Frame(janela, bg='#67d167')
     frame_botoes.pack(pady=10)
 
-    btn_insert = tk.Button(frame_botoes, text="Gerar script INSERT", bg="green", foreground="white", font=regular, command=gerar_insert)
+    btn_insert = tk.Button(frame_botoes, text="Gerar script INSERT", bg="#7acbe6", foreground="black", font=regular, command=gerar_insert)
     btn_insert.grid(row=0, column=0, padx=5)
 
-    btn_update = tk.Button(frame_botoes, text="Gerar script UPDATE", bg="blue", foreground="white", font=regular, command=gerar_update)
+    btn_update = tk.Button(frame_botoes, text="Gerar script UPDATE", bg="#bc7ff6", foreground="black", font=regular, command=gerar_update)
     btn_update.grid(row=0, column=1, padx=5)
 
-    btn_delete = tk.Button(frame_botoes, text="Gerar script DELETE", bg="purple", foreground="white", font=regular, command=gerar_delete)
+    btn_delete = tk.Button(frame_botoes, text="Gerar script DELETE", bg="#dc3545", foreground="black", font=regular, command=gerar_delete)
     btn_delete.grid(row=0, column=2, padx=5)
 
     global resultado_texto

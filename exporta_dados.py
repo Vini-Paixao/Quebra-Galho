@@ -59,31 +59,31 @@ def exportar_dados_interface():
     janela.geometry("600x530")
     janela.minsize(600, 530)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
-    janela.configure(bg='lightgreen')
+    janela.configure(bg='#67d167')
 
     # Fontes
     bold = font.Font(family="Verdana", size=12, weight="bold")
     bold_b = font.Font(family="Verdana", size=10, weight="bold")
     regular = font.Font(family="Verdana", size=10, weight="normal")
 
-    instrucao_label = tk.Label(janela, text="Cole os resultados da consulta SQL (incluindo cabeçalhos):", font=bold, bg='lightgreen')
+    instrucao_label = tk.Label(janela, text="Cole os resultados da consulta SQL (incluindo cabeçalhos):", font=bold, bg='#67d167')
     instrucao_label.pack(pady=5)
     
-    limite_label = tk.Label(janela, text="* Limite de 500.000 registros para exportação.", font=regular, bg='lightgreen')
+    limite_label = tk.Label(janela, text="* Limite de 500.000 registros para exportação.", font=regular, bg='#67d167')
     limite_label.pack(pady=5)
 
     text_area = tk.Text(janela, wrap="none", width=70, height=15, font=regular)
     text_area.pack(pady=5)
 
-    formato_label = tk.Label(janela, text="Selecione o formato de exportação:", font=regular, bg='lightgreen')
+    formato_label = tk.Label(janela, text="Selecione o formato de exportação:", font=regular, bg='#67d167')
     formato_label.pack(pady=5)
 
     formato_var = tk.StringVar(value="CSV")
     formatos = [("CSV", "CSV"), ("XML", "XML"), ("Excel (XLSX)", "XLSX")]
     for text, mode in formatos:
-        tk.Radiobutton(janela, text=text, variable=formato_var, value=mode, font=regular, bg='lightgreen').pack(anchor="w")
+        tk.Radiobutton(janela, text=text, variable=formato_var, value=mode, font=regular, bg='#67d167').pack(anchor="w")
 
-    exportar_button = tk.Button(janela, text="Exportar", bg="green", foreground="white", font=bold_b, command=exportar)
+    exportar_button = tk.Button(janela, text="Exportar", bg="#7acbe6", foreground="white", font=bold_b, command=exportar)
     exportar_button.pack(pady=10)
     
     # Botão para fechar a janela

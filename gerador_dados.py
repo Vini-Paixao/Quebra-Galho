@@ -10,7 +10,7 @@ def mostrar_ajuda_regras():
     ajuda_janela.title("Ajuda - Regras Personalizadas")
     ajuda_janela.geometry("450x530")
     ajuda_janela.minsize(450, 530)
-    ajuda_janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
+    ajuda_janela.iconbitmap(resource_path('icon.ico'))
 
     
     texto_ajuda = """
@@ -40,7 +40,7 @@ def mostrar_ajuda_regras():
     
     tk.Label(ajuda_janela, text="Instruções para Regras Personalizadas", font=("Verdana", 14, "bold")).pack(pady=10)
     tk.Message(ajuda_janela, text=texto_ajuda, width=550, font=("Verdana", 10)).pack(padx=20, pady=10)
-    tk.Button(ajuda_janela, text="Fechar", bg="red", command=ajuda_janela.destroy).pack(pady=10)
+    tk.Button(ajuda_janela, text="Fechar", bg="#dc3545", command=ajuda_janela.destroy).pack(pady=10)
 
 def gerador_dados_interface():
     fake = Faker('pt_BR')
@@ -142,32 +142,32 @@ def gerador_dados_interface():
     janela.geometry("700x530")
     janela.minsize(700, 530)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
-    janela.configure(bg='lightblue')
+    janela.configure(bg='#7acbe6')
 
     # Fontes
     bold = font.Font(family="Verdana", size=12, weight="bold")
     regular = font.Font(family="Verdana", size=10, weight="normal")
 
     # Widgets
-    tk.Label(janela, text="Quantidade de Linhas:", font=bold, bg='lightblue').pack(pady=5)
+    tk.Label(janela, text="Quantidade de Linhas:", font=bold, bg='#7acbe6').pack(pady=5)
     linhas_entry = tk.Entry(janela, font=regular, width=10)
     linhas_entry.pack()
     linhas_entry.insert(0, "100")
 
-    tk.Label(janela, text="Selecione o Campo:", font=bold, bg='lightblue').pack(pady=5)
+    tk.Label(janela, text="Selecione o Campo:", font=bold, bg='#7acbe6').pack(pady=5)
     campo_var = tk.StringVar()
     campos_combo = ttk.Combobox(janela, textvariable=campo_var, values=list(campos_disponiveis.keys()), font=regular)
     campos_combo.pack()
     campos_combo.current(0)
 
-    regra_frame = tk.Frame(janela, bg='lightblue')
+    regra_frame = tk.Frame(janela, bg='#7acbe6')
     regra_frame.pack(pady=5)
     
     tk.Label(regra_frame, text="Regra Opcional (ex: para datas use '2020-01-01-2023-12-31'):", 
-             font=regular, bg='lightblue').pack(side=tk.LEFT)
+             font=regular, bg='#7acbe6').pack(side=tk.LEFT)
     
     # Botão de ajuda
-    help_canvas = tk.Canvas(regra_frame, width=22, height=22, bg='lightblue', highlightthickness=0)
+    help_canvas = tk.Canvas(regra_frame, width=22, height=22, bg='#7acbe6', highlightthickness=0)
     help_canvas.pack(side=tk.LEFT, padx=3)
 
     # Desenhar o círculo com borda
@@ -205,11 +205,11 @@ def gerador_dados_interface():
     tk.Button(janela, text="Adicionar Campo", font=regular, command=adicionar_campo).pack(pady=5)
     tk.Button(janela, text="Remover Campo Selecionado", font=regular, command=remover_campo).pack(pady=5)
 
-    tk.Label(janela, text="Campos Adicionados:", font=bold, bg='lightblue').pack(pady=5)
+    tk.Label(janela, text="Campos Adicionados:", font=bold, bg='#7acbe6').pack(pady=5)
     lista_campos = tk.Listbox(janela, width=80, height=8, font=regular)
     lista_campos.pack()
 
-    tk.Button(janela, text="Gerar Dados e Salvar", font=bold, bg="lightgreen", command=gerar_dados).pack(pady=15)
+    tk.Button(janela, text="Gerar Dados e Salvar", font=regular, bg="#67d167", command=gerar_dados).pack(pady=15)
     tk.Button(janela, text="Fechar", font=regular, bg="#dc3545", command=janela.destroy).pack(pady=5)
 
     janela.mainloop()
