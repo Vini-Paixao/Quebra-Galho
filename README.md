@@ -1,12 +1,13 @@
 
 # Quebra Galho - <img align="center" alt="Vini-Python" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
 
-Um programa em Python que auxilia em tarefas do dia a dia, facilitando assim tarefas "chatas" e que podem ser realizadas de maneira automática, desenvolvi esse programa com intuito de me auxiliar no meu trabalho na JBS, assim facilitando consultas SQL e tarefas do dia a dia.
+Um programa em Python que auxilia em tarefas do dia a dia, facilitando assim tarefas "chatas" e que podem ser realizadas de maneira automática, desenvolvi esse programa com intuito de me auxiliar no meu trabalho na JBS, assim facilitando consultas SQL e tarefas em que considerava chatas de se fazer, agora publiquei o APP ao público para ajudar outros que talvez tenham uma dor parecida com a minha.
 
 ## Funcionalidades
 
 - **Valores em Linha** - Recebe uma certa quantidade de dados empilhados um em cima do outro, e transforma todos em linha separado por vírgula, facilitando consultas SQL.
 - **Limpar Formatação** - Recebe qualquer tipo de numeração com máscara (CPF, NF-e, CEP) e retira todos os caracteres não numéricos, mantendo apenas os números e facilitando consultas SQL.
+- **Formatador de XML/JSON** - Recebe um ou vários XMLs e recebe um JSON sem formatação e faz a validação e formatação do mesmo, com exibição na hora e botão para exportar o(s) arquivo(s) formatado(s).
 - **Funções Datas**
   - **Converter Data** - Recebe datas em diversos formatos e automaticamente coloca em formato americano para consultas SQL
   - **Calcular Dias Úteis** - Recebe uma data de ínicio e uma data final e calcula quantos dias úteis tem entre as 2 datas considerando feriados nacionais e finais de semana.
