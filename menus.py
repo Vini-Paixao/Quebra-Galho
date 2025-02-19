@@ -15,8 +15,8 @@ import tkinter as tk
 def menu_principal():
     janela = tk.Tk()
     janela.title("Quebra Galho")
-    janela.geometry("370x510")
-    janela.minsize(370, 510)
+    janela.geometry("370x470")
+    janela.minsize(370, 470)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.configure(bg='#7acbe6')
     
@@ -108,52 +108,58 @@ def menu_principal():
     )
     btn_codigo_fonte.pack(pady=5)
     
-    btn_encerrar = tk.Button(
-        janela, 
-        text="Encerrar", 
-        bg="#dc3545",  # Vermelho
-        fg="white",
-        font=regular, 
-        command=janela.quit
-    )
-    btn_encerrar.pack(pady=5)
+    # btn_encerrar = tk.Button(
+    #     janela, 
+    #     text="Encerrar", 
+    #     bg="#dc3545",  # Vermelho
+    #     fg="white",
+    #     font=regular, 
+    #     command=janela.quit
+    # )
+    # btn_encerrar.pack(pady=5)
 
     janela.mainloop()
 
 def menu_sql():
     janela = tk.Toplevel()
-    janela.title("Scripts SQL")
-    janela.geometry("300x250")
+    janela.title("Ferramentas de SQL")
+    janela.geometry("350x200")
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
-    janela.minsize(300, 250)
+    janela.minsize(350, 200)
     janela.configure(bg='#67d167')
 
     # Título
-    titulo = tk.Label(janela, text="Scripts SQL", font=bold,bg='#67d167')
+    titulo = tk.Label(janela, text="Ferramentas de SQL", font=bold,bg='#67d167')
     titulo.pack(pady=10)
+    
+    frame_1 = tk.Frame(janela, bg='#67d167')
+    frame_1.pack(pady=5)
 
     # Botões do menu SQL
-    btn_validador_sintaxe = tk.Button(janela, text="Validador de Sintaxe", font=regular, command=validador_sintaxe_interface)
-    btn_validador_sintaxe.pack(pady=5)
+    btn_validador_sintaxe = tk.Button(frame_1, text="Validador de Sintaxe", font=regular, command=validador_sintaxe_interface)
+    btn_validador_sintaxe.pack(side=tk.LEFT, padx=5)
 
-    btn_gerador_scripts = tk.Button(janela, text="Gerador de Scripts", font=regular, command=menu_gerador_scripts)
-    btn_gerador_scripts.pack(pady=5)
-
-    btn_formatacao_consultas = tk.Button(janela, text="Formatação de Consultas", font=regular, command=formatar_sql_interface)
-    btn_formatacao_consultas.pack(pady=5)
+    btn_gerador_scripts = tk.Button(frame_1, text="Gerador de Scripts", font=regular, command=menu_gerador_scripts)
+    btn_gerador_scripts.pack(side=tk.LEFT, padx=5)
     
-    btn_exporta = tk.Button(janela, text="Exportar Consultas SQL", font=regular, command=exportar_dados_interface)
-    btn_exporta.pack(pady=5)
+    frame_2 = tk.Frame(janela, bg='#67d167')
+    frame_2.pack(pady=10)
+
+    btn_formatacao_consultas = tk.Button(frame_2, text="Formatação de Script", font=regular, command=formatar_sql_interface)
+    btn_formatacao_consultas.pack(side=tk.LEFT, padx=5)
+    
+    btn_exporta = tk.Button(frame_2, text="Exportar Resultados", font=regular, command=exportar_dados_interface)
+    btn_exporta.pack(side=tk.LEFT, padx=5)
 
     btn_voltar = tk.Button(janela, text="Voltar", bg="#dc3545", font=regular, command=janela.destroy)
-    btn_voltar.pack(pady=5)
+    btn_voltar.pack(pady=15)
 
 def menu_datas():
     janela = tk.Toplevel()
     janela.title("Ferramentas de Datas")
-    janela.geometry("350x250")
+    janela.geometry("370x180")
+    janela.minsize(370, 180)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
-    janela.minsize(300, 250)
     janela.configure(bg='#bc7ff6')
 
     # Título
@@ -167,11 +173,11 @@ def menu_datas():
     btn_gerador_scripts = tk.Button(janela, text="Calcular Dias Úteis", font=regular, command=calcular_dias_uteis_interface)
     btn_gerador_scripts.pack(pady=5)
 
-    btn_formatacao_consultas = tk.Button(janela, text="Em Desenvolvimento", font=regular)
-    btn_formatacao_consultas.pack(pady=5)
+    # btn_formatacao_consultas = tk.Button(janela, text="Em Desenvolvimento", font=regular)
+    # btn_formatacao_consultas.pack(pady=5)
     
-    btn_exporta = tk.Button(janela, text="Em Desenvolvimento", font=regular)
-    btn_exporta.pack(pady=5)
+    # btn_exporta = tk.Button(janela, text="Em Desenvolvimento", font=regular)
+    # btn_exporta.pack(pady=5)
 
     btn_voltar = tk.Button(janela, text="Voltar", bg="#dc3545", font=regular, command=janela.destroy)
     btn_voltar.pack(pady=5)

@@ -83,7 +83,7 @@ def exportar_dados_interface():
     for text, mode in formatos:
         tk.Radiobutton(janela, text=text, variable=formato_var, value=mode, font=regular, bg='#67d167').pack(anchor="w")
 
-    exportar_button = tk.Button(janela, text="Exportar", bg="#7acbe6", foreground="white", font=bold_b, command=exportar)
+    exportar_button = tk.Button(janela, text="Exportar", bg="#7acbe6", foreground="black", font=regular, command=exportar)
     exportar_button.pack(pady=10)
     
     # Botão para fechar a janela

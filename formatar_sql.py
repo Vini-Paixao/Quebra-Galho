@@ -7,7 +7,6 @@ from utilidades import resource_path
 
 
 def formatar_sql():
-    print("Insira as consultas SQL a serem formatadas (pressione Enter em uma linha vazia para finalizar):")
     linhas = []
     while True:
         linha = input()
@@ -68,7 +67,7 @@ def formatar_sql_interface():
     regular = font.Font(family="Verdana", size=8, weight="normal")
 
     # Campo de entrada para as consultas SQL
-    tk.Label(janela, text="Insira as consultas SQL:", font=bold, bg='#67d167').pack(pady=5)
+    tk.Label(janela, text="Insira o Script SQL:", font=bold, bg='#67d167').pack(pady=5)
     entrada_texto = scrolledtext.ScrolledText(janela, width=60, height=10)
     entrada_texto.pack(pady=5)
 
@@ -76,7 +75,7 @@ def formatar_sql_interface():
     tk.Button(janela, text="Formatar SQL", bg="#7acbe6", foreground="black", font=regular, command=formatar).pack(pady=5)
 
     # Campo de saída para as consultas formatadas
-    tk.Label(janela, text="Consultas SQL formatadas:", font=bold, bg='#67d167').pack(pady=5)
+    tk.Label(janela, text="Script SQL formatado:", font=bold, bg='#67d167').pack(pady=5)
     resultado_texto = scrolledtext.ScrolledText(janela, width=60, height=10, state=tk.DISABLED)
     resultado_texto.pack(pady=5)
 

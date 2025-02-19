@@ -105,13 +105,58 @@ def gerador_dados_interface():
             linha = {}
             for campo in campos_adicionados:
                 try:
+                    # Se houver uma regra definida, processa de acordo com o tipo
                     if campo['regra']:
                         if campo['tipo'] == 'date':
-                            linha[campo['nome']] = fake.date_between(start_date=campo['regra'].split('-')[0], end_date=campo['regra'].split('-')[1])
+                            partes = campo['regra'].split('-')
+                            if len(partes) >= 6:
+                                data_inicial = '-'.join(partes[:3])
+                                data_final = '-'.join(partes[3:6])
+                            else:
+                                data_inicial, data_final = campo['regra'].split('-', 1)
+                            linha[campo['nome']] = fake.date_between(start_date=data_inicial, end_date=data_final)
+                        elif campo['tipo'] == 'email' and campo['regra'].startswith('@'):
+                            email = fake.email().split('@')[0] + campo['regra']
+                            linha[campo['nome']] = email
+                        elif campo['tipo'] == 'text':
+                            try:
+                                max_chars = int(campo['regra'])
+                                linha[campo['nome']] = fake.text(max_nb_chars=max_chars)
+                            except ValueError:
+                                linha[campo['nome']] = fake.text()
+                        elif campo['tipo'] == 'telefone':
+                            # Mesmo se houver regra, ignoramos e é formatado no formato Brasileiro
+                            mask = "(##) 9####-####"
+                            telefone = "+55 " + "".join(str(fake.random_digit()) if c == "#" else c for c in mask)
+                            linha[campo['nome']] = telefone 
+                        elif campo['tipo'] == 'address':
+                            linha[campo['nome']] = fake.address()
+                        elif campo['tipo'] == 'cidade':
+                            linha[campo['nome']] = fake.city()
+                        elif campo['tipo'] == 'estado':
+                            try:
+                                linha[campo['nome']] = fake.estado()
+                            except AttributeError:
+                                linha[campo['nome']] = fake.state_abbr()
                         else:
                             linha[campo['nome']] = getattr(fake, campo['tipo'])(campo['regra'])
                     else:
-                        linha[campo['nome']] = getattr(fake, campo['tipo'])()
+                        # Caso não haja regra, ainda tratamos os tipos específicos
+                        if campo['tipo'] == 'telefone':
+                            mask = "(##) 9####-####"
+                            telefone = "+55 " + "".join(str(fake.random_digit()) if c == "#" else c for c in mask)
+                            linha[campo['nome']] = telefone
+                        elif campo['tipo'] == 'address':
+                            linha[campo['nome']] = fake.address()
+                        elif campo['tipo'] == 'cidade':
+                            linha[campo['nome']] = fake.city()
+                        elif campo['tipo'] == 'estado':
+                            try:
+                                linha[campo['nome']] = fake.estado()
+                            except AttributeError:
+                                linha[campo['nome']] = fake.state_abbr()
+                        else:
+                            linha[campo['nome']] = getattr(fake, campo['tipo'])()
                 except:
                     linha[campo['nome']] = "ERRO NA GERAÇÃO"
             dados.append(linha)

@@ -37,7 +37,6 @@ def calcular_dias_uteis(data_inicio, data_fim):
         
         if fim < inicio:
             return None, None, "Data final menor que inicial!"
-        
         dias_corridos = (fim - inicio).days + 1
         dias_uteis = 0
         feriados = []
