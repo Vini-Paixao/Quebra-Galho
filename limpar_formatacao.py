@@ -48,4 +48,4 @@ def limpar_formatacao():
     # Botão para fechar a janela
     tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy).pack(pady=5)
 
-    janela.mainloop()
+    return janela

@@ -253,4 +253,4 @@ def validar_formatar_json_xml_interface():
 
     janela = tk.Toplevel()
     FormatadorApp(janela)
-    janela.mainloop()
+    return janela

@@ -53,9 +53,13 @@ def formatar_sql_interface():
         for consulta in consultas_formatadas:
             resultado_texto.insert(tk.END, consulta + "\n" + "-" * 50 + "\n")
         resultado_texto.config(state=tk.DISABLED)
+        
+    def limpar_entrada():
+        """Limpa o conteúdo do campo de entrada."""
+        entrada_texto.delete("1.0", tk.END)
 
     # Cria a janela principal
-    janela = tk.Tk()
+    janela = tk.Toplevel()
     janela.title("Formatador de SQL")
     janela.configure(bg='#67d167')
     janela.geometry('600x510')
@@ -70,10 +74,16 @@ def formatar_sql_interface():
     tk.Label(janela, text="Insira o Script SQL:", font=bold, bg='#67d167').pack(pady=5)
     entrada_texto = scrolledtext.ScrolledText(janela, width=60, height=10)
     entrada_texto.pack(pady=5)
-
+    
+    frame = tk.Frame(janela, bg='#67d167')
+    frame.pack(pady=5)
+    
     # Botão para formatar as consultas
-    tk.Button(janela, text="Formatar SQL", bg="#7acbe6", foreground="black", font=regular, command=formatar).pack(pady=5)
-
+    tk.Button(frame, text="Formatar SQL", bg="#7acbe6", foreground="black", font=regular, command=formatar).pack(side=tk.LEFT, padx=5)
+    
+    # Botão para limpar o campo de entrada
+    tk.Button(frame, text="Limpar Entrada", bg="#f0ad4e", font=regular, command=limpar_entrada).pack(side=tk.LEFT, padx=5)
+    
     # Campo de saída para as consultas formatadas
     tk.Label(janela, text="Script SQL formatado:", font=bold, bg='#67d167').pack(pady=5)
     resultado_texto = scrolledtext.ScrolledText(janela, width=60, height=10, state=tk.DISABLED)
@@ -82,4 +92,4 @@ def formatar_sql_interface():
     # Botão para fechar a janela
     tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy).pack(pady=5)
 
-    janela.mainloop()
+    return janela

@@ -71,7 +71,11 @@ def gerar_delete():
     resultado_texto.insert(tk.END, f"\nScript DELETE gerado:\n\n{delete_sql}\n")
 
 def menu_gerador_scripts():
-    janela = tk.Tk()
+    def limpar_entrada():
+        """Limpa o conteúdo do campo de entrada."""
+        resultado_texto.delete("1.0", tk.END)
+    
+    janela = tk.Toplevel()
     janela.title("Gerador de Scripts SQL")
     janela.configure(bg='#67d167')
     janela.geometry('800x330')
@@ -95,8 +99,14 @@ def menu_gerador_scripts():
     global resultado_texto
     resultado_texto = tk.Text(janela, height=12, font=regular, width=60)
     resultado_texto.pack(pady=5)
+    
+    frame = tk.Frame(janela, bg='#67d167')
+    frame.pack(pady=5)
 
-    btn_sair = tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy)
-    btn_sair.pack(pady=5)
+    btn_sair = tk.Button(frame, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy)
+    btn_sair.pack(side=tk.LEFT, padx=5)
+    
+    # Botão para limpar o campo de entrada
+    tk.Button(frame, text="Limpar Entrada", bg="#f0ad4e", font=regular, command=limpar_entrada).pack(side=tk.LEFT, padx=5)
 
-    janela.mainloop()
+    return janela

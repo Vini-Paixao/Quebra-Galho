@@ -53,6 +53,10 @@ def validador_sintaxe_interface():
             messagebox.showinfo("Resultado da Validação", resultado)
         else:
             messagebox.showwarning("Aviso", "Por favor, insira uma consulta SQL.")
+    
+    def limpar_entrada():
+        """Limpa o conteúdo do campo de entrada."""
+        text_area.delete("1.0", tk.END)
 
     janela = tk.Toplevel()
     janela.title("Validador de Sintaxe SQL")
@@ -70,9 +74,17 @@ def validador_sintaxe_interface():
 
     text_area = scrolledtext.ScrolledText(janela, width=55, height=10, font=regular)
     text_area.pack(pady=5)
+    
+    frame = tk.Frame(janela, bg='#67d167')
+    frame.pack(pady=5)
 
-    btn_validar = tk.Button(janela, text="Validar Sintaxe", bg="#bc7ff6", foreground="black", font=regular, command=validar)
-    btn_validar.pack(pady=5)
+    btn_validar = tk.Button(frame, text="Validar Sintaxe", bg="#bc7ff6", foreground="black", font=regular, command=validar)
+    btn_validar.pack(side=tk.LEFT, padx=5)
+    
+    # Botão para limpar o campo de entrada
+    tk.Button(frame, text="Limpar Entrada", bg="#f0ad4e", font=regular, command=limpar_entrada).pack(side=tk.LEFT, padx=5)
 
     btn_fechar = tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy)
     btn_fechar.pack(pady=5)
+    
+    return janela

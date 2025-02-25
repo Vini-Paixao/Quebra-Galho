@@ -25,6 +25,10 @@ def alinhar_valores_interface():
         resultado_entry.delete(0, tk.END)  # Limpa qualquer texto existente
         resultado_entry.insert(0, resultado)  # Insere o texto formatado
         resultado_entry.configure(state="readonly")  # Volta para somente leitura
+    
+    def limpar_entrada():
+        """Limpa o conteúdo do campo de entrada."""
+        text_area.delete("1.0", tk.END)
 
     janela = tk.Toplevel()
     janela.title("Alinhar Valores")
@@ -57,9 +61,15 @@ def alinhar_valores_interface():
     remover_duplicatas_var = tk.BooleanVar()
     remover_duplicatas_check = tk.Checkbutton(janela, text="Remover duplicatas", variable=remover_duplicatas_var, font=regular, bg='#7acbe6')
     remover_duplicatas_check.pack(pady=5)
-
-    alinhar_button = tk.Button(janela, text="Alinhar", bg="#67d167", font=regular, command=alinhar)
-    alinhar_button.pack(pady=5)
+    
+    frame = tk.Frame(janela, bg='#7acbe6')
+    frame.pack(pady=5)
+    
+    alinhar_button = tk.Button(frame, text="Alinhar", bg="#67d167", font=regular, command=alinhar)
+    alinhar_button.pack(side=tk.LEFT, pady=5)
+    
+    # Botão para limpar o campo de entrada
+    tk.Button(frame, text="Limpar Entrada", bg="#f0ad4e", font=regular, command=limpar_entrada).pack(side=tk.LEFT, padx=5)
 
     # Campo de entrada para o resultado
     resultado_entry = tk.Entry(janela, width=60, state="readonly", font=regular, readonlybackground="white", fg="black")
@@ -67,5 +77,5 @@ def alinhar_valores_interface():
     
     # Botão para fechar a janela
     tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy).pack(pady=5)
-
-    janela.mainloop()
+    
+    return janela

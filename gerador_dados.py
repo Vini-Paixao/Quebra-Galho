@@ -257,4 +257,4 @@ def gerador_dados_interface():
     tk.Button(janela, text="Gerar Dados e Salvar", font=regular, bg="#67d167", command=gerar_dados).pack(pady=15)
     tk.Button(janela, text="Fechar", font=regular, bg="#dc3545", command=janela.destroy).pack(pady=5)
 
-    janela.mainloop()
+    return janela

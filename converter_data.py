@@ -45,7 +45,7 @@ def converter_data_interface():
     btn_encerrar = tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy)
     btn_encerrar.pack(pady=5)
 
-    janela.mainloop()
+    return janela
 
 def converter_data(data_input):
     """

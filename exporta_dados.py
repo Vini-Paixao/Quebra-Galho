@@ -53,11 +53,15 @@ def exportar_dados_interface():
                     messagebox.showerror("Erro", f"Falha ao exportar para Excel: {e}")
         else:
             messagebox.showwarning("Aviso", "Formato de exportação não selecionado.")
+    
+    def limpar_entrada():
+        """Limpa o conteúdo do campo de entrada."""
+        text_area.delete("1.0", tk.END)
 
     janela = tk.Toplevel()
     janela.title("Exportar Dados")
-    janela.geometry("600x530")
-    janela.minsize(600, 530)
+    janela.geometry("600x520")
+    janela.minsize(600, 520)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.configure(bg='#67d167')
 
@@ -82,11 +86,17 @@ def exportar_dados_interface():
     formatos = [("CSV", "CSV"), ("XML", "XML"), ("Excel (XLSX)", "XLSX")]
     for text, mode in formatos:
         tk.Radiobutton(janela, text=text, variable=formato_var, value=mode, font=regular, bg='#67d167').pack(anchor="w")
+    
+    frame = tk.Frame(janela, bg='#67d167')
+    frame.pack(pady=5)
 
-    exportar_button = tk.Button(janela, text="Exportar", bg="#7acbe6", foreground="black", font=regular, command=exportar)
-    exportar_button.pack(pady=10)
+    exportar_button = tk.Button(frame, text="Exportar", bg="#7acbe6", foreground="black", font=regular, command=exportar)
+    exportar_button.pack(side=tk.LEFT, padx=5)
+    
+    # Botão para limpar o campo de entrada
+    tk.Button(frame, text="Limpar Entrada", bg="#f0ad4e", font=regular, command=limpar_entrada).pack(padx=5)
     
     # Botão para fechar a janela
-    tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy).pack(pady=5)
+    tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy).pack(pady=10)
 
-    janela.mainloop()
+    return janela

@@ -121,4 +121,4 @@ def calcular_dias_uteis_interface():
     btn_encerrar = tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy)
     btn_encerrar.pack(pady=5)
     
-    janela.mainloop()
+    return janela
