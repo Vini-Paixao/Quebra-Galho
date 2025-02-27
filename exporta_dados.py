@@ -76,8 +76,11 @@ def exportar_dados_interface():
     limite_label = tk.Label(janela, text="* Limite de 500.000 registros para exportação.", font=regular, bg='#67d167')
     limite_label.pack(pady=5)
 
-    text_area = tk.Text(janela, wrap="none", width=70, height=15, font=regular)
+    text_area = tk.Text(janela, wrap="none", width=70, height=13, font=regular)
     text_area.pack(pady=5)
+    
+    # Botão para limpar o campo de entrada
+    tk.Button(janela, text="Limpar Entrada", bg="#f0ad4e", font=regular, command=limpar_entrada).pack(padx=5)
 
     formato_label = tk.Label(janela, text="Selecione o formato de exportação:", font=regular, bg='#67d167')
     formato_label.pack(pady=5)
@@ -85,16 +88,10 @@ def exportar_dados_interface():
     formato_var = tk.StringVar(value="CSV")
     formatos = [("CSV", "CSV"), ("XML", "XML"), ("Excel (XLSX)", "XLSX")]
     for text, mode in formatos:
-        tk.Radiobutton(janela, text=text, variable=formato_var, value=mode, font=regular, bg='#67d167').pack(anchor="w")
-    
-    frame = tk.Frame(janela, bg='#67d167')
-    frame.pack(pady=5)
+        tk.Radiobutton(janela, text=text, variable=formato_var, value=mode, font=regular, bg='#67d167').pack(anchor="center", pady=2)
 
-    exportar_button = tk.Button(frame, text="Exportar", bg="#7acbe6", foreground="black", font=regular, command=exportar)
-    exportar_button.pack(side=tk.LEFT, padx=5)
-    
-    # Botão para limpar o campo de entrada
-    tk.Button(frame, text="Limpar Entrada", bg="#f0ad4e", font=regular, command=limpar_entrada).pack(padx=5)
+    exportar_button = tk.Button(janela, text="Exportar", bg="#7acbe6", foreground="black", font=regular, command=exportar)
+    exportar_button.pack(padx=5)
     
     # Botão para fechar a janela
     tk.Button(janela, text="Fechar", bg="#dc3545", font=regular, command=janela.destroy).pack(pady=10)

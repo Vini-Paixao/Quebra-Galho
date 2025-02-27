@@ -60,19 +60,19 @@ def validador_sintaxe_interface():
 
     janela = tk.Toplevel()
     janela.title("Validador de Sintaxe SQL")
-    janela.geometry("500x300")
-    janela.minsize(500, 300)
+    janela.geometry("530x325")
+    janela.minsize(530, 325)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.configure(bg='#67d167')
     
     # Fontes
     bold = font.Font(family="Verdana", size=12, weight="bold")
-    regular = font.Font(family="Verdana", size=10, weight="normal")
+    regular = font.Font(family="Verdana", size=11, weight="normal")
 
     label = tk.Label(janela, text="Insira sua consulta SQL:", font=bold, bg='#67d167')
     label.pack(pady=5)
 
-    text_area = scrolledtext.ScrolledText(janela, width=55, height=10, font=regular)
+    text_area = scrolledtext.ScrolledText(janela, width=48, height=10, font=regular)
     text_area.pack(pady=5)
     
     frame = tk.Frame(janela, bg='#67d167')

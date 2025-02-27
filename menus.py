@@ -153,9 +153,9 @@ def menu_principal():
 def menu_sql():
     janela = tk.Toplevel()
     janela.title("Ferramentas de SQL")
-    janela.geometry("350x200")
+    janela.geometry("350x210")
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
-    janela.minsize(350, 200)
+    janela.minsize(350, 210)
     janela.configure(bg='#67d167')
 
     # Título
@@ -209,6 +209,8 @@ def menu_sql():
         command=janela.destroy
     )
     btn_voltar.pack(pady=15)
+    
+    return janela
 
 def menu_datas():
     janela = tk.Toplevel()
@@ -247,3 +249,5 @@ def menu_datas():
         command=janela.destroy
     )
     btn_voltar.pack(pady=5)
+    
+    return janela

@@ -28,9 +28,14 @@ def open_tela(chave, criar_func):
     :return: A janela criada ou já existente.
     """
     if chave in telas_abertas and telas_abertas[chave].winfo_exists():
-        messagebox.showinfo("Aviso", f"A tela '{chave}' já está aberta.")
-        telas_abertas[chave].lift()  # Traz a janela para frente
-        return telas_abertas[chave]
+        if chave == 'menu_datas' or chave == 'menu_sql':
+            messagebox.showinfo("Aviso", f"O sub-menu '{chave}' já está aberto.")
+            telas_abertas[chave].lift()  # Traz a janela para frente
+            return telas_abertas[chave]
+        else:
+            messagebox.showinfo("Aviso", f"A tela '{chave}' já está aberta.")
+            telas_abertas[chave].lift()  # Traz a janela para frente
+            return telas_abertas[chave]
     
     # Cria a nova janela
     nova_tela = criar_func()

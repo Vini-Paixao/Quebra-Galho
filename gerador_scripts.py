@@ -78,11 +78,11 @@ def menu_gerador_scripts():
     janela = tk.Toplevel()
     janela.title("Gerador de Scripts SQL")
     janela.configure(bg='#67d167')
-    janela.geometry('800x330')
-    janela.minsize(800, 330)
+    janela.geometry('700x330')
+    janela.minsize(700, 330)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     
-    regular = font.Font(family="Verdana", size=8, weight="normal")
+    regular = font.Font(family="Verdana", size=11, weight="normal")
 
     frame_botoes = tk.Frame(janela, bg='#67d167')
     frame_botoes.pack(pady=10)

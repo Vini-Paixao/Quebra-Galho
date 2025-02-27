@@ -68,7 +68,7 @@ def formatar_sql_interface():
     
     # Fontes
     bold = font.Font(family="Verdana", size=12, weight="bold")
-    regular = font.Font(family="Verdana", size=8, weight="normal")
+    regular = font.Font(family="Verdana", size=11, weight="normal")
 
     # Campo de entrada para as consultas SQL
     tk.Label(janela, text="Insira o Script SQL:", font=bold, bg='#67d167').pack(pady=5)
