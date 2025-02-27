@@ -1,64 +1,72 @@
 # Quebra Galho - <img align="center" alt="Vini-Python" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
 
-Um programa em Python que auxilia em tarefas do dia a dia, facilitando assim tarefas "chatas" e que podem ser realizadas de maneira automática, desenvolvi esse programa com intuito de me auxiliar no meu trabalho na JBS, assim facilitando consultas SQL e tarefas em que considerava chatas de se fazer, agora publiquei o APP ao público para ajudar outros que talvez tenham uma dor parecida com a minha.
+Quebra Galho é um programa em Python desenvolvido para automatizar tarefas repetitivas e facilitar o dia a dia. Originalmente criado para auxiliar no meu trabalho na JBS, o aplicativo agora está disponível publicamente para ajudar outras pessoas com necessidades semelhantes.
 
 ## Funcionalidades
 
-- **Valores em Linha** - Recebe uma certa quantidade de dados empilhados um em cima do outro, e transforma todos em linha separado por vírgula, facilitando consultas SQL.
-- **Limpar Formatação** - Recebe qualquer tipo de numeração com máscara (CPF, NF-e, CEP) e retira todos os caracteres não numéricos, mantendo apenas os números e facilitando consultas SQL.
-- **Gerador de Dados Fictícios** - Gerador de dados para realizar consultas ou inclusão de dados, selecione as categorias que quiser (Nome, Email, Telefone, Endereço, CPF/CNPJ, etc), após selecionar as categorias, será gerado um arquivo EXCEL (.xlsx) com os resultados.
-- **Formatador de XML/JSON** - Recebe um ou vários XMLs e recebe um JSON sem formatação e faz a validação e formatação do mesmo, com exibição na hora e botão para exportar o(s) arquivo(s) formatado(s).
-- **Funções Datas**
-  - **Converter Data** - Recebe datas em diversos formatos e automaticamente coloca em formato americano para consultas SQL
-  - **Calcular Dias Úteis** - Recebe uma data de ínicio e uma data final e calcula quantos dias úteis tem entre as 2 datas considerando feriados nacionais e finais de semana.
-- **Funções SQL**
-  - **Validar Sintaxe** - Recebe um Script SQL e faz a validação se o mesmo é um script que rodaria sem nenhum erro de sintaxe.
-  - **Gerador de Scripts** - Gera Scripts SQL básicos (INSERT, UPDATE e DELETE) com base nos dados fornecidos.
-  - **Formatação de Consulta** - Recebe um SCRIPT SQL e formata o mesmo na indentação correta, facilitando na hora de visualizar os dados e realizar a consulta.
-  - **Exportação de Consulta** - Recebe o resultado de uma consulta SQL e fornece a opção de exportar em **CSV, XML** ou **Excel (.xlsx)** assim facilitando a manipulação de dados externamente.
+- **Valores em Linha**: Transforma dados empilhados em uma única linha, separados por vírgula, facilitando consultas SQL.
+- **Limpar Formatação**: Remove caracteres não numéricos de qualquer tipo de numeração com máscara (CPF, NF-e, CEP), mantendo apenas os números.
+- **Gerador de Dados Fictícios**: Gera dados fictícios para consultas ou inclusão de dados, com opções para Nome, Email, Telefone, Endereço, CPF/CNPJ, etc., e exporta os resultados em um arquivo EXCEL (.xlsx).
+- **Formatador de XML/JSON**: Valida e formata XMLs e JSONs, com exibição instantânea e opção de exportação dos arquivos formatados.
+- **Funções Datas**:
+  - **Converter Data**: Converte datas em diversos formatos para o formato americano, facilitando consultas SQL.
+  - **Calcular Dias Úteis**: Calcula o número de dias úteis entre duas datas, considerando feriados nacionais e finais de semana.
+- **Funções SQL**:
+  - **Validar Sintaxe**: Valida a sintaxe de scripts SQL.
+  - **Gerador de Scripts**: Gera scripts SQL básicos (INSERT, UPDATE e DELETE) com base nos dados fornecidos.
+  - **Formatação de Consulta**: Formata scripts SQL para uma indentação correta, facilitando a visualização e execução.
+  - **Exportação de Consulta**: Exporta o resultado de consultas SQL em **CSV, XML** ou **Excel (.xlsx)**.
 
 ## Instalação
 
+O programa está disponível para download, permitindo uso e teste rápidos. Você também pode seguir o passo a passo manual para executar o programa na sua IDE de preferência.
+
 ### Executável
 
-Caso não queira ter que compilar o arquivo no seu computador o projeto já está compilado.
+1. Acesse a aba de [Releases](https://github.com/Vini-Paixao/Quebra-Galho/releases) e faça o download do arquivo .exe (disponível apenas para **Windows**).
+2. Após baixar o arquivo, clique duas vezes no .exe, selecione "Mais Informações" e depois clique em "Sim" para executar (essa mensagem aparece porque o programa não é licenciado pela Microsoft).
 
-1. Acesse a aba de [Release](https://github.com/Vini-Paixao/Quebra-Galho/releases) e realizar o download do .exe (Disponível somente para **Windows**).
-
-2. Após baixar o arquivo dê 2 cliques no arquivo .exe e clique em "Mais Informações" e depois clique em "Sim", conforme Imagens abaixo. (Essa mensagem aparecer por se tratar de um programa não licenciado pela Microsoft na qual ela retorna que pode se tratar de vírus)
-![Mensagem do Windows](image/Print-1.png)
-![Mensagem do Windows 2](image/Print-2.png)
-
-##
+![Mensagem do Windows](images/Print-1.png)
+![Mensagem do Windows 2](images/Print-2.png)
 
 ### Manual
 
-Caso prefira pode Fazer manualmente na sua IDE de preferência, certifiquesse de ter o Python e o pip instalado na máquina, e siga os passos a passos:
+1. Clone o repositório:
 
-1. Clonando o Projeto:
-
-  ```bash
+    ```bash
     git clone https://github.com/Vini-Paixao/Quebra-Galho.git
-  ```
+    ```
 
-2. Entrando na pasta do projeto:
+2. Entre na pasta do projeto:
 
-  ```bash
+    ```bash
     cd Quebra-Galho
-  ```
+    ```
 
-3. Instalando as depêndencias externas:
+3. Instale as dependências externas:
 
-  ```bash
+    ```bash
     pip install -r requirements.txt
-  ```
+    ```
 
-4. Executando:
+4. Execute o programa:
 
-  ```bash
+    ```bash
     python main.py
-  ```
+    ```
+
+## Contribuição
+
+Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua feature ou correção de bug (`git checkout -b feature/nova-feature`).
+3. Faça commit das suas alterações (`git commit -m 'Adiciona nova feature'`).
+4. Envie para a branch (`git push origin feature/nova-feature`).
+5. Abra um Pull Request.
 
 ## Licença
+
+Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
