@@ -15,8 +15,8 @@ import tkinter as tk
 def menu_principal():
     janela = tk.Tk()
     janela.title("Quebra Galho")
-    janela.geometry("370x470")
-    janela.minsize(370, 470)
+    janela.geometry("380x450")
+    janela.minsize(380, 450)
     janela.iconbitmap(resource_path('icon.ico'))  # Caminho corrigido
     janela.configure(bg='#7acbe6')
     
@@ -40,10 +40,10 @@ def menu_principal():
     # Descrição
     desc = tk.Label(
         janela, 
-        text="Bem-vindo ao Quebra Galho! Esse programa automatiza tarefas repetitivas e facilita seu dia a dia. Ele ainda está em desenvolvimento, então se encontrar bugs ou tiver sugestões, entre em contato. Aproveite!", 
+        text="Bem-vindo ao Quebra Galho!\nEste programa em Python automatiza tarefas repetitivas para facilitar seu dia a dia. Se encontrar bugs ou tiver sugestões, entre em contato. Aproveite!", 
         font=descricao,
         bg='#7acbe6',
-        wraplength=340
+        wraplength=370
     )
     desc.pack(pady=5)
 
@@ -52,7 +52,7 @@ def menu_principal():
         janela, 
         text="Valores em Linha", 
         font=regular, 
-        command=lambda: open_tela("alinhar_valores", alinhar_valores_interface)
+        command=lambda: open_tela("Alinhar Valores", alinhar_valores_interface)
     )
     btn_valores_linha.pack(pady=5)
 
@@ -60,7 +60,7 @@ def menu_principal():
         janela, 
         text="Limpar Formatação", 
         font=regular, 
-        command=lambda: open_tela("limpar_formatacao", limpar_formatacao)
+        command=lambda: open_tela("Limpar Formatação", limpar_formatacao)
     )
     btn_limpar_formatacao.pack(pady=5)
     
@@ -68,15 +68,15 @@ def menu_principal():
         janela, 
         text="Gerar Dados Fictícios", 
         font=regular, 
-        command=lambda: open_tela("gerador_dados", gerador_dados_interface)
+        command=lambda: open_tela("Gerar Dados Fictícios", gerador_dados_interface)
     )
     btn_gerar_dados.pack(pady=5)
     
     btn_json_xml = tk.Button(
         janela, 
-        text="Validador de JSON/XML", 
+        text="Formatador & Validador de JSON/XML", 
         font=regular, 
-        command=lambda: open_tela("json_xml", validar_formatar_json_xml_interface)
+        command=lambda: open_tela("Formatador & Validador de JSON/XML", validar_formatar_json_xml_interface)
     )
     btn_json_xml.pack(pady=5)
     
@@ -88,7 +88,7 @@ def menu_principal():
         text="Funções Datas", 
         bg="#bc7ff6", 
         font=regular, 
-        command=lambda: open_tela("menu_datas", menu_datas)
+        command=lambda: open_tela("Datas", menu_datas)
     )
     btn_menu_datas.pack(side=tk.LEFT, padx=5)
 
@@ -97,18 +97,15 @@ def menu_principal():
         text="Funções SQL", 
         bg="#67d167", 
         font=regular, 
-        command=lambda: open_tela("menu_sql", menu_sql)
+        command=lambda: open_tela("SQL", menu_sql)
     )
     btn_funcoes_sql.pack(side=tk.LEFT, padx=5)
     
-    separator = tk.Label(janela, text="_________________________________________", font=autor, bg='#7acbe6')
+    separator = tk.Label(janela, text="____________________________________________", font=autor, bg='#7acbe6')
     separator.pack(pady=0)
     
-    txt_autor = tk.Label(janela, text="Desenvolvido por Marcus Paixão!", font=autor, bg='#7acbe6')
-    txt_autor.pack(pady=10)
-    
     rede_social_frame = tk.Frame(janela, bg='#7acbe6')
-    rede_social_frame.pack(pady=5)
+    rede_social_frame.pack(pady=10)
 
     btn_site = tk.Button(
         rede_social_frame, 
@@ -138,7 +135,10 @@ def menu_principal():
         bg="#6c757d",  # Cinza
         fg="white"
     )
-    btn_codigo_fonte.pack(pady=5)
+    btn_codigo_fonte.pack(pady=0)
+    
+    txt_autor = tk.Label(janela, text="Desenvolvido por Marcus Paixão!", font=autor, bg='#7acbe6')
+    txt_autor.pack(pady=10)
     
     # Função para confirmar o fechamento do programa
     def on_closing():
@@ -170,7 +170,7 @@ def menu_sql():
         frame_1, 
         text="Validador de Sintaxe", 
         font=regular, 
-        command=lambda: open_tela("validador_sintaxe", validador_sintaxe_interface)
+        command=lambda: open_tela("Validador de Sintaxe", validador_sintaxe_interface)
     )
     btn_validador_sintaxe.pack(side=tk.LEFT, padx=5)
 
@@ -178,7 +178,7 @@ def menu_sql():
         frame_1, 
         text="Gerador de Scripts", 
         font=regular, 
-        command=lambda: open_tela("gerador_scripts", menu_gerador_scripts)
+        command=lambda: open_tela("Gerador de Scripts", menu_gerador_scripts)
     )
     btn_gerador_scripts.pack(side=tk.LEFT, padx=5)
     
@@ -189,7 +189,7 @@ def menu_sql():
         frame_2, 
         text="Formatação de Script", 
         font=regular, 
-        command=lambda: open_tela("formatar_sql", formatar_sql_interface)
+        command=lambda: open_tela("Formatação de Script", formatar_sql_interface)
     )
     btn_formatacao_consultas.pack(side=tk.LEFT, padx=5)
     
@@ -197,7 +197,7 @@ def menu_sql():
         frame_2, 
         text="Exportar Resultados", 
         font=regular, 
-        command=lambda: open_tela("exportar_dados", exportar_dados_interface)
+        command=lambda: open_tela("Exportar Resultados", exportar_dados_interface)
     )
     btn_exporta.pack(side=tk.LEFT, padx=5)
 
@@ -229,7 +229,7 @@ def menu_datas():
         janela, 
         text="Converter Datas", 
         font=regular, 
-        command=lambda: open_tela("converter_data", converter_data_interface)
+        command=lambda: open_tela("Converter Datas", converter_data_interface)
     )
     btn_validador_sintaxe.pack(pady=5)
 
@@ -237,7 +237,7 @@ def menu_datas():
         janela, 
         text="Calcular Dias Úteis", 
         font=regular, 
-        command=lambda: open_tela("calcular_dias_uteis", calcular_dias_uteis_interface)
+        command=lambda: open_tela("Calcular Dias Úteis", calcular_dias_uteis_interface)
     )
     btn_gerador_scripts.pack(pady=5)
     
