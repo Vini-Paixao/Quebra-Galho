@@ -6,3 +6,4 @@ tkcalendar==1.6.1
 sqlfluff
 xlsxwriter
 lxml
+Pillow

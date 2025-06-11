@@ -1,0 +1,23 @@
+# Arquivos e pastas do PyInstaller
+/dist/
+/build/
+*.spec
+
+# Arquivos de cache e compilados do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Pastas de ambiente virtual
+.venv
+venv/
+env/
+
+# Arquivos de configuração de IDEs
+.vscode/
+.idea/
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
