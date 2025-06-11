@@ -1,72 +1,109 @@
 # Quebra Galho - <img align="center" alt="Vini-Python" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
 
-Quebra Galho é um programa em Python desenvolvido para automatizar tarefas repetitivas e facilitar o dia a dia. Originalmente criado para auxiliar no meu trabalho na JBS, o aplicativo agora está disponível publicamente para ajudar outras pessoas com necessidades semelhantes.
+<p align="center">
+  <img src="images/Claro.png" alt="Demonstração do Quebra Galho" width="300"/>
+  <img src="images/Escuro.png" alt="Demonstração do Quebra Galho" width="300"/>
+</p>
 
-## Funcionalidades
+<p align="center">
+  <strong>Uma caixa de ferramentas em Python para automatizar tarefas do dia a dia.</strong>
+</p>
 
-- **Valores em Linha**: Transforma dados empilhados em uma única linha, separados por vírgula, facilitando consultas SQL.
-- **Limpar Formatação**: Remove caracteres não numéricos de qualquer tipo de numeração com máscara (CPF, NF-e, CEP), mantendo apenas os números.
-- **Gerador de Dados Fictícios**: Gera dados fictícios para consultas ou inclusão de dados, com opções para Nome, Email, Telefone, Endereço, CPF/CNPJ, etc., e exporta os resultados em um arquivo EXCEL (.xlsx).
-- **Formatador de XML/JSON**: Valida e formata XMLs e JSONs, com exibição instantânea e opção de exportação dos arquivos formatados.
-- **Funções Datas**:
-  - **Converter Data**: Converte datas em diversos formatos para o formato americano, facilitando consultas SQL.
-  - **Calcular Dias Úteis**: Calcula o número de dias úteis entre duas datas, considerando feriados nacionais e finais de semana.
-- **Funções SQL**:
-  - **Validar Sintaxe**: Valida a sintaxe de scripts SQL.
-  - **Gerador de Scripts**: Gera scripts SQL básicos (INSERT, UPDATE e DELETE) com base nos dados fornecidos.
-  - **Formatação de Consulta**: Formata scripts SQL para uma indentação correta, facilitando a visualização e execução.
-  - **Exportação de Consulta**: Exporta o resultado de consultas SQL em **CSV, XML** ou **Excel (.xlsx)**.
+<p align="center">
+    <a href="https://github.com/Vini-Paixao/Quebra-Galho/releases">
+        <img src="https://img.shields.io/github/downloads/Vini-Paixao/Quebra-Galho/total?label=Downloads&style=for-the-badge&color=5cb85c" alt="Downloads">
+    </a>
+    <a href="https://github.com/Vini-Paixao/Quebra-Galho/blob/main/LICENSE.md">
+        <img src="https://img.shields.io/github/license/Vini-Paixao/Quebra-Galho?style=for-the-badge&color=f0ad4e" alt="Licença">
+    </a>
+</p>
 
-## Instalação
+## 💡 Sobre o Projeto
 
-O programa está disponível para download, permitindo uso e teste rápidos. Você também pode seguir o passo a passo manual para executar o programa na sua IDE de preferência.
+**Quebra Galho** é uma aplicação de desktop desenvolvida em Python para automatizar tarefas repetitivas e simplificar processos comuns do dia a dia. O que começou como uma ferramenta interna para otimizar o trabalho na JBS, evoluiu para um projeto de código aberto com uma interface moderna e intuitiva, pronto para ajudar qualquer pessoa a ser mais produtiva.
 
-### Executável
+## ✨ Funcionalidades
 
-1. Acesse a aba de [Releases](https://github.com/Vini-Paixao/Quebra-Galho/releases) e faça o download do arquivo .exe (disponível apenas para **Windows**).
-2. Após baixar o arquivo, clique duas vezes no .exe, selecione "Mais Informações" e depois clique em "Sim" para executar (essa mensagem aparece porque o programa não é licenciado pela Microsoft).
+O aplicativo conta com um conjunto de ferramentas poderosas, divididas em categorias:
 
-![Mensagem do Windows](images/Print-1.png)
-![Mensagem do Windows 2](images/Print-2.png)
+- **Valores em Linha**: Converte uma lista de valores (copiada de uma coluna, por exemplo) em uma única linha, separados por vírgula, ideal para cláusulas `IN` em consultas SQL.
+- **Limpar Formatação**: Remove todos os caracteres não numéricos de campos com máscara, como CPF, CNPJ, NF-e ou CEP.
+- **Gerador de Dados Fictícios**: Cria dados de teste (nomes, e-mails, documentos, etc.) e os exporta para planilhas Excel (`.xlsx`), CSV ou XML.
+- **Formatador de XML/JSON**: Valida e indenta corretamente arquivos XML (incluindo NF-e) e JSON, facilitando a leitura e a identificação de erros.
+- **Funções de Datas**:
+  - **Converter Data**: Converte datas de formatos comuns (DD/MM/YYYY, DDMMYYYY, etc.) para o padrão americano (`YYYY-MM-DD`).
+  - **Calcular Dias Úteis**: Calcula o total de dias úteis e corridos entre duas datas, desconsiderando feriados nacionais e finais de semana.
+- **Funções de SQL**:
+  - **Validar Sintaxe**: Verifica a sintaxe de scripts SQL utilizando o `sqlfluff` para o dialeto T-SQL.
+  - **Gerador de Scripts**: Gera templates básicos de `INSERT`, `UPDATE` e `DELETE` a partir de informações fornecidas pelo usuário.
+  - **Formatação de Consulta**: Formata scripts SQL com indentação e palavras-chave em maiúsculas, melhorando a legibilidade.
+  - **Exportação de Consulta**: Exporta o resultado de consultas (copiado da sua ferramenta de banco de dados) para os formatos **CSV, XML** ou **Excel (.xlsx)**.
 
-### Manual
+## 🚀 Tecnologias Utilizadas
 
-1. Clone o repositório:
+Este projeto foi construído com as seguintes tecnologias:
+
+- **Python**: A linguagem principal por trás de toda a lógica.
+- **Tkinter**: A biblioteca padrão do Python para a criação da interface gráfica.
+- **Sun Valley TTK Theme**: Um tema moderno que renova completamente o visual dos componentes Tkinter, com suporte a modo claro e escuro.
+- **Pandas**: Utilizado para a manipulação de dados, principalmente nas funções de geração e exportação.
+- **Pillow**: Para manipulação e exibição de ícones na interface.
+- **lxml**: Para um processamento de XML robusto e eficiente.
+- **PyInstaller**: Para empacotar a aplicação em um executável único para Windows.
+
+## 🛠️ Instalação e Execução
+
+### Executável (Recomendado)
+
+A maneira mais fácil de usar o Quebra Galho é baixar a versão mais recente pronta para uso.
+
+1. Acesse a página de [**Releases**](https://github.com/Vini-Paixao/Quebra-Galho/releases).
+2. Faça o download do arquivo `QuebraGalho.exe`.
+3. Execute o arquivo.
+    - *Observação: O Windows pode exibir um aviso de segurança por ser um programa de um desenvolvedor não reconhecido. Basta clicar em "Mais informações" e depois em "Executar mesmo assim".*
+    ![Mensagem do Windows](images/Print-1.png)
+    ![Mensagem do Windows 2](images/Print-2.png)
+
+### Manualmente (Para Desenvolvedores)
+
+Se você deseja executar o projeto a partir do código-fonte:
+
+1. **Clone o repositório:**
 
     ```bash
     git clone https://github.com/Vini-Paixao/Quebra-Galho.git
-    ```
-
-2. Entre na pasta do projeto:
-
-    ```bash
     cd Quebra-Galho
     ```
 
-3. Instale as dependências externas:
+2. **(Opcional) Crie um ambiente virtual:**
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # No Windows: venv\Scripts\activate
+    ```
+
+3. **Instale as dependências:**
 
     ```bash
     pip install -r requirements.txt
     ```
 
-4. Execute o programa:
+4. **Execute o programa:**
 
     ```bash
     python main.py
     ```
 
-## Contribuição
+## 🤝 Contribuição
 
-Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
+Contribuições são sempre bem-vindas! Se você tem alguma ideia para melhorar o Quebra Galho, sinta-se à vontade para:
 
-1. Faça um fork do repositório.
-2. Crie uma branch para sua feature ou correção de bug (`git checkout -b feature/nova-feature`).
-3. Faça commit das suas alterações (`git commit -m 'Adiciona nova feature'`).
-4. Envie para a branch (`git push origin feature/nova-feature`).
-5. Abra um Pull Request.
+1. Fazer um "fork" do repositório.
+2. Criar uma nova "branch" para sua funcionalidade (`git checkout -b feature/minha-feature`).
+3. Fazer "commit" das suas alterações (`git commit -m 'feat: Adiciona minha-feature'`).
+4. Enviar para a sua "branch" (`git push origin feature/minha-feature`).
+5. Abrir um "Pull Request".
 
-## Licença
+## 📄 Licença
 
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
